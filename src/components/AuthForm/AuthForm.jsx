@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import { Fragment } from 'react'
 import * as S from './styles'
+import Button from '../Button/Button'
 
 const AuthForm = () => {
   const navigate = useNavigate()
@@ -70,19 +71,30 @@ const AuthForm = () => {
           </Fragment>
         )}
         {pathname === '/signin' && (
-          <S.FormButton onClick={handleLogin}>Войти</S.FormButton>
+          <Button
+            callback={handleLogin}
+            buttonName="Войти"
+            isPurple={true}
+            isLarge={true}
+          />
         )}
         {pathname === '/signup' && (
-          <S.FormButton onClick={handleRegister}>
-            Зарегистрироваться
-          </S.FormButton>
+          <Button
+            callback={handleRegister}
+            buttonName="Зарегистрироваться"
+            isPurple={false}
+            isLarge={true}
+          />
         )}
         {pathname === '/signin' && (
           <Fragment>
             <Link to="/signup" title="Перейти к регистрации.">
-              <S.FormButtonRegister onClick={() => navigate('/signin')}>
-                Зарегистрироваться
-              </S.FormButtonRegister>
+              <Button
+                buttonName="Зарегистрироваться"
+                isPurple={false}
+                isLarge={true}
+                onClick={() => navigate('/signin')}
+              />
             </Link>
           </Fragment>
         )}

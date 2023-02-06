@@ -1,9 +1,10 @@
 import Logo from '../Logo/Logo'
-import { StyledHeader, HeaderButton } from './styles'
+import { StyledHeader } from './styles'
 import UserAccount from '../UserAccount/UserAccount'
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import Button from '../Button/Button'
 
 const Header = ({ $isBlackText }) => {
   const navigate = useNavigate()
@@ -20,9 +21,11 @@ const Header = ({ $isBlackText }) => {
       {!userLogged && (
         <Fragment>
           <Link to="/signin" title="Войти.">
-            <HeaderButton onClick={() => navigate('/signin')}>
-              Войти
-            </HeaderButton>
+            <Button
+              buttonName="Войти"
+              isHeaderButton={true}
+              onClick={() => navigate('/signin')}
+            />
           </Link>
         </Fragment>
       )}
