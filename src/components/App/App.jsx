@@ -1,7 +1,7 @@
 import { React } from 'react'
 import { createGlobalStyle } from 'styled-components'
-import { StyledApp } from './styles'
 import { AppRoutes } from '../../routes'
+import { Fragment } from 'react'
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -24,10 +24,10 @@ body {
 
 const App = () => {
   return (
-    <StyledApp>
+    <Fragment>
       <GlobalStyle />
       <AppRoutes />
-    </StyledApp>
+    </Fragment>
   )
 }
 
