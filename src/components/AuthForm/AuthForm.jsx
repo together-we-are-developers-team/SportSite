@@ -1,89 +1,63 @@
-import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import React from 'react'
+import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import { Fragment } from 'react'
 import * as S from './styles'
 
-const AuthForm = () => {
+const AuthForm = ({values, onSubmit, onChange, errors, isValid, mathPasswordsError}) => {
   const navigate = useNavigate()
-
-  const [valueName, setValueName] = useState('')
-  const [valuePassword, setValuePassword] = useState('')
-
-  const onInputChange = (evt) => {
-    setValueName(evt.target.value)
-  }
-  const onInputChangePassword = (evt) => {
-    setValuePassword(evt.target.value)
-  }
-  const onSubmit = (event) => {
-    event.preventDefault()
-  }
-  const handleLogin = (event) => {
-    event.preventDefault()
-
-    setValueName('')
-    setValuePassword('')
-  }
-  const handleRegister = () => {
-    navigate('/signin')
-  }
   const { pathname } = useLocation()
-
+  
+  
   return (
     <S.PopupArea>
-      <S.AuthForm onSubmit={onSubmit}>
+      <S.AuthForm onSubmit={onSubmit} noValidate>
         <Logo $isBlackText={'black'} />
         <S.FormInputFirst
           type="text"
           name="login"
           placeholder="Логин"
-          value={valueName}
-          onChange={onInputChange}
+          value={values.login || ""}
+          minLength='2'
+          onChange={onChange}
           required
         />
-        <S.FormSpan id="login-error" />
+        <S.FormSpan $isValid={isValid}>{errors.login}</S.FormSpan>
         <S.FormInput
           type="password"
           name="password"
-          id="password"
-          value={valuePassword}
-          onChange={onInputChangePassword}
+          value={values.password || ""}
+          onChange={onChange}
           placeholder="Пароль"
           minLength="8"
           required
         />
-        <S.FormSpan id="password-error" />
+        <S.FormSpan $isValid={isValid}>{errors.password }</S.FormSpan>
         {pathname !== '/signin' && (
           <Fragment>
             <S.FormInput
               type="password"
-              name="password"
+              name="repeat_password"
               placeholder="Повторите пароль"
               minLength="8"
-              value={valuePassword}
-              onChange={onInputChangePassword}
+              value={values.repeat_password || ""}
+              onChange={onChange}
               required
             />
-            <S.FormSpan id="password-error" />
+            <S.FormSpan $isValid={isValid}>{errors.repeat_password}</S.FormSpan>
           </Fragment>
         )}
-        {pathname === '/signin' && (
-          <S.FormButton onClick={handleLogin}>Войти</S.FormButton>
-        )}
-        {pathname === '/signup' && (
-          <S.FormButton onClick={handleRegister}>
-            Зарегистрироваться
-          </S.FormButton>
-        )}
+       
+       <S.FormSpanSubmit $isValid={isValid}>{mathPasswordsError}</S.FormSpanSubmit>
+          <S.FormButton type="submit"  disabled={!isValid}>{pathname === '/signin' ? "Войти" : 'Зарегистрироваться'}</S.FormButton>
+      
+        
         {pathname === '/signin' && (
           <Fragment>
-            <Link to="/signup" title="Перейти к регистрации.">
-              <S.FormButtonRegister onClick={() => navigate('/signin')}>
-                Зарегистрироваться
-              </S.FormButtonRegister>
-            </Link>
+            
+          <S.FormButtonRegister type="button" title="Перейти к регистрации." onClick={() => navigate('/signup')}>Зарегистрироваться</S.FormButtonRegister>
+           
           </Fragment>
         )}
       </S.AuthForm>
