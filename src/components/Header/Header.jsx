@@ -24,6 +24,7 @@ const Header = ({ $isBlackText }) => {
             <Button
               buttonName="Войти"
               isHeaderButton={true}
+              isVisible={true}
               onClick={() => navigate('/signin')}
             />
           </Link>
