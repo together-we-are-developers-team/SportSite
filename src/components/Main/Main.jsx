@@ -1,10 +1,11 @@
 import React from 'react'
 import SaleStiker from '../SaleStiker/SaleStiker'
 import Card from '../Card/Card'
-
 import * as S from './styles'
+import Button from '../Button/Button'
 
 const Main = () => {
+ 
   const UpWindow = () => {
     window.scrollTo({
       top: 0,
@@ -27,7 +28,7 @@ const Main = () => {
           <Card titleCard={'Степ-аэробика'} back={'card-step'} />
           <Card titleCard={'Бодифлекс'} back={'card-body'} />{' '}
         </S.MainCards>
-        <S.MainUpButton onClick={UpWindow}>Наверх 🠕</S.MainUpButton>
+        <Button callback={UpWindow} isLarge={false} buttonName="Наверх 🠕" />
       </S.Main>
     </div>
   )
