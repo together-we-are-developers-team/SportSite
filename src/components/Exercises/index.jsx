@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './styles'
 
-const Exercises = () => {
+const Exercises = ({ visible, setVisible }) => {
   const testData = [
     'Наклон вперед (10 повторений)',
     'Наклон назад (10 повторений)',
@@ -16,7 +16,9 @@ const Exercises = () => {
         ))}
       </S.ExercisesList>
 
-      <button>Заполнить свой прогресс</button>
+      <button type="button" onClick={() => setVisible(!visible)}>
+        Заполнить свой прогресс
+      </button>
     </div>
   )
 }
