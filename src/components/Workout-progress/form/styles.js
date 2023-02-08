@@ -4,8 +4,7 @@ export const FormWrapper = styled.div`
   background-color: #ffffff;
   border-radius: 12px;
   padding: 36px 42px 44px;
-  display: flex;
-  flex-direction: column;
+
   max-width: 444px;
   position: absolute;
   top: 50%;
@@ -13,6 +12,12 @@ export const FormWrapper = styled.div`
   margin-right: -50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+`
+
+export const ProgressForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const FormInput = styled.input`

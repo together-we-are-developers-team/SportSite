@@ -3,7 +3,7 @@ import * as S from './styles'
 import Exercises from '../../components/Exercises'
 import WorkoutProgress from '../../components/Workout-progress'
 import ReactPlayer from 'react-player'
-// import playIconVideo from '../../assests/static/playIconVideo.png'
+import playIconVideo from '../../assests/static/playIconVideo.png'
 import WorkoutProgressForm from '../../components/Workout-progress/form/WorkoutProgressForm'
 
 const UserWorkout = () => {
