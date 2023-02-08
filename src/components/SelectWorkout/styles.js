@@ -1,10 +1,11 @@
 import styled from 'styled-components'
-// import successimg from '../../images/successtraining.svg'
+import successimg from '../../images/successtraining.svg'
 
 export const PopupAreaMenu = styled.div`
   height: 444px;
   width: 626px;
   background-color: #f5f5f5;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
 `
@@ -19,11 +20,13 @@ export const TrainingBtnSuccess = styled.button`
   border-radius: 26px;
   color: #06b16e;
 `
-// изображение галочки для выполненной тренировки не понимаю как прикрепить к кнопке изображение...
-// width: 27px;
-// height: 25px;
-// margin-top: 12px;
-// background-image: url(${successimg});
+export const BtnImg = styled.div`
+
+  width: 27px;
+  height: 25px;
+  margin-top: 12px;
+  background-image: url(${successimg});
+`
 
 export const TrainingBtn = styled.button`
   display: flex;
@@ -32,11 +35,16 @@ export const TrainingBtn = styled.button`
   width: 278px;
   left: 83px;
   top: 0px;
-  content: fit;
-  border: 1px solid #000000;
+  border: ${props => props.active ? '1px solid #06b16e' : '1px solid #000000'};
   border-radius: 26px;
-  color: #000000;
+  color: ${props => props.active ? '#06b16e' : '#000000'};
   gap: 12px;
+  position: relative;
+  & svg {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
 `
 
 export const BtnContent = styled.div`

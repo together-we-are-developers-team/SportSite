@@ -5,6 +5,7 @@ import UserAccount from "../../components/UserAccount/UserAccount"
 import Card from "../../components/Card/Card"
 import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
+import SelectWorkout from '../../components/SelectWorkout/SelectWorkout'
 
 const MyProfile = () => {
   const [modalActive, setModalActive] = useState(false);
@@ -43,9 +44,11 @@ const MyProfile = () => {
         <ModalPassword active={modalActive} setActive={setModalActive}/>
         <ModalLogin active={modalLoginActive} setActive={setModalLoginActive}/>
       </>
-      
+      <SelectWorkout/>
+
     </S.Myprofile>
 
+    
   )
 }
 
