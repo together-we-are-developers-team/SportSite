@@ -15,7 +15,7 @@ const AuthForm = ({
 }) => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
-console.log(onChange())
+
   return (
     <S.PopupArea>
       <S.AuthForm onSubmit={onSubmit} noValidate>
@@ -26,7 +26,7 @@ console.log(onChange())
           placeholder="Логин"
           value={values.login || ''}
           minLength="2"
-          onChange={onChange}
+          onChange={(event)=>onChange(event)}
           required
         />
         <S.FormSpan $isValid={isValid}>{errors.login}</S.FormSpan>
@@ -34,7 +34,7 @@ console.log(onChange())
           type="password"
           name="password"
           value={values.password || ''}
-          onChange={onChange}
+          onChange={(event)=>onChange(event)}
           placeholder="Пароль"
           minLength="8"
           required
@@ -48,7 +48,7 @@ console.log(onChange())
               placeholder="Повторите пароль"
               minLength="8"
               value={values.repeat_password || ''}
-              onChange={onChange}
+              onChange={(event)=>onChange(event)}
               required
             />
             <S.FormSpan $isValid={isValid}>{errors.repeat_password}</S.FormSpan>
