@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
-import StratosSkyengWoff from './._stratosskyengweb-thin.woff'
-import StratosSkyengWoff2 from './._stratosskyengweb-thin.woff2'
+import StratosSkyengWoff from './stratosskyengweb-thin.woff'
+import StratosSkyengWoff2 from './stratosskyengweb-thin.woff2'
 
 
 export default createGlobalStyle`
@@ -27,47 +27,6 @@ export default createGlobalStyle`
         h3{
             font-size: 40px;
             line-height: 48px;
-        }
-
-        
-        fontSize32{
-            font-size: 32px;
-            line-height: 40px;
-        }
-
-
-        fontSize24{
-            font-size: 24px;
-            line-height: 32px;
-        }
-
-        fontSize18{
-            font-size: 18px;
-            line-height: 24px; 
-        }
-
-        button{
-            font-size: 16px;
-            line-height: 24px;
-        }
-
-        button{
-            font-size: 16px;
-            line-height: 18px;
-        }
-
-        // // для карточек с тренировками
-
-        fontSize36{
-            font-weight: 800;
-            font-size: 36px;
-            line-height: 110%;
-        }
-
-        fontSize20{
-            font-size: 20px;
-            line-height: 115%;
-            color: #FFFFFF;
         }
     }
 `
