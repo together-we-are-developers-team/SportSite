@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const AuthForm = styled.form`
   width: 366px;
@@ -20,13 +20,12 @@ export const AuthForm = styled.form`
 `
 export const FormButton = styled.button`
   width: 278px;
-  height: 52px;
+  min-height: 52px;
   cursor: pointer;
   background: #580ea2;
   border-radius: 46px;
   margin-left: 4px;
   border: none;
-  margin-top: 30px;
   box-sizing: border-box;
   color: #ffffff;
   &:hover {
@@ -62,10 +61,26 @@ export const FormInput = styled.input`
   border-bottom: 1px solid #d0cece;
   padding: 8px 1px;
   margin-right: 3px;
-  margin-bottom: 30px;
   margin-top: 0px;
 `
 export const FormInputFirst = styled(FormInput)`
   margin-top: 38px;
 `
-export const FormSpan = styled.span``
+export const FormSpan = styled.span`
+  color: red;
+  width: 100%;
+  min-height: 20px;
+  margin-bottom: 20px;
+  font-size: 10px;
+  border-top: 1px solid red;
+  ${(props) =>
+    !props.$IsValid &&
+    css`
+      border-top: 1px solid grey;
+    `}
+`
+export const FormSpanSubmit = styled(FormSpan)`
+  margin-bottom: 0;
+  text-align: center;
+  border-top: 1px solid transparent;
+`
