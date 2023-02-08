@@ -71,19 +71,13 @@ const AuthForm = () => {
           </Fragment>
         )}
         {pathname === '/signin' && (
-          <Button
-            callback={handleLogin}
-            buttonName="Войти"
-            isPurple={true}
-            isLarge={true}
-          />
+          <Button callback={handleLogin} buttonName="Войти" />
         )}
         {pathname === '/signup' && (
           <Button
             callback={handleRegister}
+            isTransparent={true}
             buttonName="Зарегистрироваться"
-            isPurple={false}
-            isLarge={true}
           />
         )}
         {pathname === '/signin' && (
@@ -91,8 +85,7 @@ const AuthForm = () => {
             <Link to="/signup" title="Перейти к регистрации.">
               <Button
                 buttonName="Зарегистрироваться"
-                isPurple={false}
-                isLarge={true}
+                isTransparent={true}
                 onClick={() => navigate('/signin')}
               />
             </Link>

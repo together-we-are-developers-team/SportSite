@@ -28,7 +28,7 @@ const Main = () => {
           <Card titleCard={'Степ-аэробика'} back={'card-step'} />
           <Card titleCard={'Бодифлекс'} back={'card-body'} />{' '}
         </S.MainCards>
-        <Button callback={UpWindow} isLarge={false} buttonName="Наверх 🠕" />
+        <Button callback={UpWindow} isGreen={true} buttonName="Наверх 🠕" />
       </S.Main>
     </div>
   )

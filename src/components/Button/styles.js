@@ -1,38 +1,25 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-export const ButtonLargePurple = styled.button`
+export const mainButton = styled.button`
   width: 278px;
   height: 52px;
   cursor: pointer;
-  background: #580ea2;
+  background: ${({ transparent }) => (transparent ? 'transparent' : '#580ea2')};
   border-radius: 46px;
   margin-left: 4px;
-  border: none;
-  margin-top: 30px;
+  border: ${({ transparent }) => (transparent ? '1px solid #d0cece' : 'none')};
+  margin-top: ${({ transparent }) => (transparent ? '20px' : '30px')};
   box-sizing: border-box;
-  color: #ffffff;
+  color: ${({ transparent }) => (transparent ? 'black' : 'white')};
   transition: 0.3s;
   &:hover {
-    background: #3f007d;
+    background: ${({ transparent }) => (transparent ? '#f4f5f6' : '#3f007d')};
   }
   &:active {
-    background: #271a58;
+    background: ${({ transparent }) => (transparent ? '#d9d9d9' : '#271a58')};
   }
 `
-export const ButtonLargeTransparent = styled(ButtonLargePurple)`
-  color: black;
-  margin-top: 20px;
-  background: transparent;
-  border: 1px solid #d0cece;
-  transition: 0.3s;
-  &:hover {
-    background: #f4f5f6;
-  }
-  &:active {
-    background: #d9d9d9;
-  }
-`
-export const smallButton = styled.button`
+export const greenButton = styled.button`
   margin-top: 34px;
   cursor: pointer;
   width: 147px;
@@ -59,7 +46,8 @@ export const smallButton = styled.button`
   }
 `
 
-export const HeaderButton = styled.button`
+export const headerButton = styled.button`
+  display: ${({ visible }) => (!visible ? 'none' : 'block')};
   padding: 5px 16px 7px;
   width: 77px;
   height: 36px;
@@ -81,9 +69,4 @@ export const HeaderButton = styled.button`
   &:active {
     background: #3b29a1;
   }
-  ${(props) =>
-    props.$IsUserLogged &&
-    css`
-      visibility: hidden;
-    `}
 `

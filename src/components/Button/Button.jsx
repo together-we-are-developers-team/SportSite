@@ -1,60 +1,30 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
 import * as S from './styles'
 
 const Button = ({
   buttonName,
-  isPurple,
-  isLarge,
+  isTransparent,
   isHeaderButton,
+  isGreen,
   callback,
+  isVisible
 }) => {
-  const [purpleColor, setPurpleColor] = useState(false)
-  const [large, setLarge] = useState(true)
-  const [headerButton, setHeaderButton] = useState(false)
-
-  useEffect(() => {
-    if (isPurple) {
-      setPurpleColor(true)
-    } else {
-      setPurpleColor(false)
-    }
-  }, [isPurple])
-
-  useEffect(() => {
-    if (isLarge) {
-      setLarge(true)
-    } else {
-      setLarge(false)
-    }
-  }, [isLarge])
-
-  useEffect(() => {
-    if (isHeaderButton) {
-      setHeaderButton(true)
-    } else {
-      setHeaderButton(false)
-    }
-  }, [isHeaderButton])
-
-  if (headerButton) {
-    return <S.HeaderButton onClick={callback}>{buttonName}</S.HeaderButton>
+  if (isGreen) {
+    return <S.greenButton onClick={callback}>{buttonName}</S.greenButton>
   }
 
-  if (!large) {
-    return <S.smallButton onClick={callback}>{buttonName}</S.smallButton>
-  }
-
-  if (purpleColor) {
+  if (isHeaderButton) {
     return (
-      <S.ButtonLargePurple onClick={callback}>{buttonName}</S.ButtonLargePurple>
-    )
-  } else {
-    return (
-      <S.ButtonLargeTransparent onClick={callback}>
+      <S.headerButton visible={isVisible} onClick={callback}>
         {buttonName}
-      </S.ButtonLargeTransparent>
+      </S.headerButton>
     )
   }
+
+  return (
+    <S.mainButton onClick={callback} transparent={isTransparent}>
+      {buttonName}
+    </S.mainButton>
+  )
 }
 export default Button
