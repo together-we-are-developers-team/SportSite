@@ -7,22 +7,24 @@ import { useNavigate } from 'react-router-dom'
 const Register = () => {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormWithValidation()
-    const [mathPasswordsError, setMathPassordsError] = useState('');
-    const navigate = useNavigate()
+  const [mathPasswordsError, setMathPassordsError] = useState('')
+  const navigate = useNavigate()
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (values.password === values.repeat_password && values.password && values.repeat_password) {
+    if (
+      values.password === values.repeat_password &&
+      values.password &&
+      values.repeat_password
+    ) {
       //onRegister(values);
       console.log(values)
       resetForm()
       navigate('/signin')
-     
     }
     setMathPassordsError('Пароли не совпадают')
     return
   }
 
- 
   return (
     <StyledRegister>
       <AuthForm

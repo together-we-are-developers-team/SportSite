@@ -34,7 +34,6 @@ export const FormButton = styled.button`
   $:active {
     background: #271a58;
   }
-
 `
 export const FormButtonRegister = styled(FormButton)`
   color: black;
@@ -63,25 +62,25 @@ export const FormInput = styled.input`
   padding: 8px 1px;
   margin-right: 3px;
   margin-top: 0px;
- 
 `
 export const FormInputFirst = styled(FormInput)`
   margin-top: 38px;
 `
 export const FormSpan = styled.span`
-color: red;
-width: 100%;
-min-height: 20px;
-margin-bottom: 20px;
-font-size: 10px;
-border-top: 1px solid red;
-${(props) =>
-  !props.$IsValid &&
-  css`
-  border-top: 1px solid grey;
-  `}`
-  export const FormSpanSubmit = styled(FormSpan)`
+  color: red;
+  width: 100%;
+  min-height: 20px;
+  margin-bottom: 20px;
+  font-size: 10px;
+  border-top: 1px solid red;
+  ${(props) =>
+    !props.$IsValid &&
+    css`
+      border-top: 1px solid grey;
+    `}
+`
+export const FormSpanSubmit = styled(FormSpan)`
   margin-bottom: 0;
   text-align: center;
   border-top: 1px solid transparent;
-  `
+`

@@ -5,11 +5,17 @@ import Logo from '../Logo/Logo'
 import { Fragment } from 'react'
 import * as S from './styles'
 
-const AuthForm = ({values, onSubmit, onChange, errors, isValid, mathPasswordsError}) => {
+const AuthForm = ({
+  values,
+  onSubmit,
+  onChange,
+  errors,
+  isValid,
+  mathPasswordsError,
+}) => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
-  
-  
+console.log(onChange())
   return (
     <S.PopupArea>
       <S.AuthForm onSubmit={onSubmit} noValidate>
@@ -18,8 +24,8 @@ const AuthForm = ({values, onSubmit, onChange, errors, isValid, mathPasswordsErr
           type="text"
           name="login"
           placeholder="Логин"
-          value={values.login || ""}
-          minLength='2'
+          value={values.login || ''}
+          minLength="2"
           onChange={onChange}
           required
         />
@@ -27,13 +33,13 @@ const AuthForm = ({values, onSubmit, onChange, errors, isValid, mathPasswordsErr
         <S.FormInput
           type="password"
           name="password"
-          value={values.password || ""}
+          value={values.password || ''}
           onChange={onChange}
           placeholder="Пароль"
           minLength="8"
           required
         />
-        <S.FormSpan $isValid={isValid}>{errors.password }</S.FormSpan>
+        <S.FormSpan $isValid={isValid}>{errors.password}</S.FormSpan>
         {pathname !== '/signin' && (
           <Fragment>
             <S.FormInput
@@ -41,23 +47,30 @@ const AuthForm = ({values, onSubmit, onChange, errors, isValid, mathPasswordsErr
               name="repeat_password"
               placeholder="Повторите пароль"
               minLength="8"
-              value={values.repeat_password || ""}
+              value={values.repeat_password || ''}
               onChange={onChange}
               required
             />
             <S.FormSpan $isValid={isValid}>{errors.repeat_password}</S.FormSpan>
           </Fragment>
         )}
-       
-       <S.FormSpanSubmit $isValid={isValid}>{mathPasswordsError}</S.FormSpanSubmit>
-          <S.FormButton type="submit"  disabled={!isValid}>{pathname === '/signin' ? "Войти" : 'Зарегистрироваться'}</S.FormButton>
-      
-        
+
+        <S.FormSpanSubmit $isValid={isValid}>
+          {mathPasswordsError}
+        </S.FormSpanSubmit>
+        <S.FormButton type="submit" disabled={!isValid}>
+          {pathname === '/signin' ? 'Войти' : 'Зарегистрироваться'}
+        </S.FormButton>
+
         {pathname === '/signin' && (
           <Fragment>
-            
-          <S.FormButtonRegister type="button" title="Перейти к регистрации." onClick={() => navigate('/signup')}>Зарегистрироваться</S.FormButtonRegister>
-           
+            <S.FormButtonRegister
+              type="button"
+              title="Перейти к регистрации."
+              onClick={() => navigate('/signup')}
+            >
+              Зарегистрироваться
+            </S.FormButtonRegister>
           </Fragment>
         )}
       </S.AuthForm>
