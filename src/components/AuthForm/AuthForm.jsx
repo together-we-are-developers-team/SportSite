@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import { Fragment } from 'react'
 import * as S from './styles'
+import Button from '../Button/Button'
 
 const AuthForm = ({
   values,
@@ -55,6 +56,7 @@ const AuthForm = ({
           </Fragment>
         )}
 
+
         <S.FormSpanSubmit $isValid={isValid}>
           {mathPasswordsError}
         </S.FormSpanSubmit>
@@ -71,6 +73,7 @@ const AuthForm = ({
             >
               Зарегистрироваться
             </S.FormButtonRegister>
+
           </Fragment>
         )}
       </S.AuthForm>
