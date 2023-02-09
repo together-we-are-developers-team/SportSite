@@ -14,19 +14,17 @@ export default createGlobalStyle`
         font-style: normal;
         color: #000000;
 
-        h1{
+        h1 {
             font-size: 64px;
-            line-height: 72px;
         }  
 
-        h2{
-        font-size: 48px;
-        line-height: 56px;
+        h2 {
+            font-size: 48px;
         } 
 
-        h3{
+        h3 {
             font-size: 40px;
-            line-height: 48px;
+  
         }
     }
 `
