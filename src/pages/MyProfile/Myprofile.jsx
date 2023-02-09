@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 import * as S from './styles'
 import Logo from '../../components/Logo/Logo'
 import UserAccount from '../../components/UserAccount/UserAccount'
-import Card from '../../components/Card/Card'
 import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
-import SelectWorkout from '../../components/SelectWorkout/SelectWorkout'
-import mainButton from '../../components/Button/Button'
+import Cards from './Cards'
 
 const MyProfile = () => {
   const [modalActive, setModalActive] = useState(false)
@@ -40,10 +38,9 @@ const MyProfile = () => {
         <h2>Мои курсы</h2>
 
         <S.MyprofileCards>
-          <Card titleCard={'Йога'} back={'card-yoga'} />
-          <mainButton></mainButton>
-          <Card titleCard={'Стретчинг'} back={'card-strench'} />
-          <Card titleCard={'Бодифлекс'} back={'card-body'} />
+          <Cards titleCard={'Йога'} back={'card-yoga'} />
+          <Cards titleCard={'Стретчинг'} back={'card-strench'} />
+          <Cards titleCard={'Бодифлекс'} back={'card-body'} />
         </S.MyprofileCards>
 
         <ModalPassword active={modalActive} setActive={setModalActive} />
