@@ -4,9 +4,12 @@ import Register from './pages/Register/Register'
 import Login from './pages/Login/Login'
 import MainPage from './pages/Main/Main'
 import NotFound from './pages/404/NotFound'
+import MyProfile from "./pages/MyProfile/Myprofile"
 
 import { ProtectedRoute } from './components/protected-route/protected-route'
 import { useLoginMutation } from '../src/services/login'
+import { StyledApp, StyledAppWhite } from './components/App/styles'
+
 export const AppRoutes = ({ isLoading }) => {
   const [user, setUser] = React.useState(true)
   const { data } = useLoginMutation()
@@ -21,7 +24,21 @@ export const AppRoutes = ({ isLoading }) => {
         path="/"
         element={
           <ProtectedRoute isAllowed={user}>
-            <MainPage isLoading={isLoading} />
+            <StyledApp>
+              <MainPage isLoading={isLoading} />
+            </StyledApp>
+            
+            {/* <MyProfile isLoading={isLoading} /> */}
+          </ProtectedRoute>
+        }
+      ></Route>
+            <Route
+        path="/myprofile"
+        element={
+          <ProtectedRoute isAllowed={user}>
+            <StyledAppWhite>
+              <MyProfile isLoading={isLoading} />
+            </StyledAppWhite>
           </ProtectedRoute>
         }
       ></Route>
