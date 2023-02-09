@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
 import * as S from './styles'
 
-const TrainingBtn = () => {
+const TrainingBtn = ({ title, subTitle }) => {
   const [active, setActive] = useState(false)
 
-
-
   return (
-    <S.TrainingBtn active={active} onClick = {() => setActive(!active)}>
-      <S.BtnTitle>Утренняя практика</S.BtnTitle>
+    <S.TrainingBtn active={active} onClick={() => setActive(!active)}>
+      <S.BtnTitle>{title}</S.BtnTitle>
       {active && (
         <svg
           width="28"
@@ -21,7 +19,7 @@ const TrainingBtn = () => {
           <path d="M6 9.81034L11.775 15.5L27 0.5" stroke="#06B16E" />
         </svg>
       )}
-      <S.BtnSubtitle>Йога на каждый день / 1 день</S.BtnSubtitle>
+      <S.BtnSubtitle>{subTitle}</S.BtnSubtitle>
     </S.TrainingBtn>
   )
 }

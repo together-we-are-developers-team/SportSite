@@ -2,43 +2,34 @@ import styled from 'styled-components'
 import successimg from '../../images/successtraining.svg'
 
 export const PopupAreaMenu = styled.div`
-  height: 444px;
-  width: 626px;
+  height: 626px;
+  width: 444px;
   background-color: #f5f5f5;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
 `
-
-export const TrainingBtnSuccess = styled.button`
-  width: 278px;
-  height: 76px;
-  left: 0px;
-  top: 0px;
-  content: fit;
-  border: 1px solid #06b16e;
-  border-radius: 26px;
-  color: #06b16e;
+export const Title = styled.h1`
+  height: 40px;
+  left: 53px;
+  top: 36px;
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+  margin-bottom: 40px;
 `
-export const BtnImg = styled.div`
-
-  width: 27px;
-  height: 25px;
-  margin-top: 12px;
-  background-image: url(${successimg});
-`
-
 export const TrainingBtn = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 278px;
   left: 83px;
+  margin-bottom: 12px;
   top: 0px;
-  border: ${props => props.active ? '1px solid #06b16e' : '1px solid #000000'};
+  border: ${(props) =>
+    props.active ? '1px solid #06b16e' : '1px solid #000000'};
   border-radius: 26px;
-  color: ${props => props.active ? '#06b16e' : '#000000'};
-  gap: 12px;
+  color: ${(props) => (props.active ? '#06b16e' : '#000000')};
   position: relative;
   & svg {
     position: absolute;
