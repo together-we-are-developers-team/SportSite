@@ -1,13 +1,10 @@
-import { Navigate } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 import React from 'react'
-export const ProtectedRoute = ({
-  children,
-  redirectPath = '/signin',
-  isAllowed,
-}) => {
+
+export function ProtectedRoute({ redirectPath = '/signin', isAllowed }) {
   if (!isAllowed) {
-    return <Navigate to={redirectPath} replace={true} />
+    return <Navigate to={redirectPath} replace />
   }
 
-  return children
+  return <Outlet />
 }

@@ -1,14 +1,14 @@
 import React from 'react'
 import * as S from './styles'
 
-const Button = ({
+function Button({
   buttonName,
   isTransparent,
   isHeaderButton,
   isGreen,
   callback,
-  isVisible
-}) => {
+  isVisible,
+}) {
   if (isGreen) {
     return <S.greenButton onClick={callback}>{buttonName}</S.greenButton>
   }

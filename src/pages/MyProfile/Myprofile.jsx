@@ -6,18 +6,16 @@ import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
 import Cards from './Cards'
 
-
-const MyProfile = () => {
+function MyProfile() {
   const [modalActive, setModalActive] = useState(false)
   const [modalLoginActive, setModalLoginActive] = useState(false)
 
   return (
     <S.Myprofile>
       <S.MyprofileHeader>
-        <Logo $isBlackText={true} />
+        <Logo $isBlackText />
         <UserAccount />
       </S.MyprofileHeader>
-
 
       <S.MyprofileBlock>
         <h2>Мой профиль</h2>
@@ -39,14 +37,13 @@ const MyProfile = () => {
       <h2>Мои курсы</h2>
 
       <S.MyprofileCards>
-        <Cards titleCard={'Йога'} back={'card-yoga'} />
-        <Cards titleCard={'Стретчинг'} back={'card-strench'} />
-        <Cards titleCard={'Бодифлекс'} back={'card-body'} />
+        <Cards titleCard="Йога" back="card-yoga" />
+        <Cards titleCard="Стретчинг" back="card-strench" />
+        <Cards titleCard="Бодифлекс" back="card-body" />
       </S.MyprofileCards>
 
       <ModalPassword active={modalActive} setActive={setModalActive} />
       <ModalLogin active={modalLoginActive} setActive={setModalLoginActive} />
-
     </S.Myprofile>
   )
 }

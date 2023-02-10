@@ -1,10 +1,11 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react'
 import Button from '../../components/Button/Button'
 import * as S from './styles'
 import backgroundTitleBlock from './img/back.png'
 import phoneImg from '../../assests/static/phone.png'
 
-const AboutCourse = () => {
+function AboutCourse() {
   const fitForYouDataTest = [
     'Давно хотели попробовать йогу, но не решались начать.',
     'Хотите укрепить позвоночник, избавиться от болей в спине и суставах.',
@@ -59,7 +60,7 @@ const AboutCourse = () => {
             выбором направления и тренера, с которым тренировки принесут
             здоровье и радость!
           </S.TrialWorkoutDescription>
-          <Button buttonName="Записаться на тренировку"></Button>
+          <Button buttonName="Записаться на тренировку" />
         </div>
         <img src={phoneImg} alt="phone" />
       </S.TrialWorkoutBlock>

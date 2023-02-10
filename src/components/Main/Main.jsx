@@ -4,8 +4,7 @@ import Card from '../Card/Card'
 import * as S from './styles'
 import Button from '../Button/Button'
 
-const Main = () => {
- 
+function Main() {
   const UpWindow = () => {
     window.scrollTo({
       top: 0,
@@ -13,6 +12,7 @@ const Main = () => {
       behavior: 'smooth',
     })
   }
+
   return (
     <div>
       <S.Main>
@@ -20,15 +20,15 @@ const Main = () => {
         <S.MainTitle>
           Начните заниматься спортом и улучшите качество жизни
         </S.MainTitle>
-        <SaleStiker></SaleStiker>
+        <SaleStiker />
         <S.MainCards>
-          <Card titleCard={'Йога'} back={'card-yoga'} />
-          <Card titleCard={'Стретчинг'} back={'card-strench'} />
-          <Card titleCard={'Танцевальный фитнес'} back={'card-dance'} />
-          <Card titleCard={'Степ-аэробика'} back={'card-step'} />
-          <Card titleCard={'Бодифлекс'} back={'card-body'} />{' '}
+          <Card titleCard="Йога" back="card-yoga" />
+          <Card titleCard="Стретчинг" back="card-strench" />
+          <Card titleCard="Танцевальный фитнес" back="card-dance" />
+          <Card titleCard="Степ-аэробика" back="card-step" />
+          <Card titleCard="Бодифлекс" back="card-body" />{' '}
         </S.MainCards>
-        <Button callback={UpWindow} isGreen={true} buttonName="Наверх 🠕" />
+        <Button callback={UpWindow} isGreen buttonName="Наверх 🠕" />
       </S.Main>
     </div>
   )

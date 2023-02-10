@@ -1,13 +1,15 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react'
 import * as S from './styles'
 import Button from '../Button/Button'
 
-const Exercises = ({ visible, setVisible }) => {
+function Exercises({ visible, setVisible }) {
   const testData = [
     'Наклон вперед (10 повторений)',
     'Наклон назад (10 повторений)',
     'Поднятие ног, согнутых в коленях (5 повторений)',
   ]
+
   return (
     <div>
       <h3>Упражнения</h3>

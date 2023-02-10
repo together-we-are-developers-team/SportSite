@@ -3,7 +3,7 @@ import Logo from '../Logo/Logo'
 
 import * as S from './styles'
 
-const ChangeLogin = ({ active, setActive }) => {
+function ChangeLogin({ active, setActive }) {
   const [valueName, setValueName] = useState('')
 
   const onInputChange = (evt) => {
@@ -14,14 +14,14 @@ const ChangeLogin = ({ active, setActive }) => {
     event.preventDefault()
   }
 
-  if(!active) {
+  if (!active) {
     return null
   }
 
   return (
     <S.PopupArea onClick={() => setActive(false)}>
       <S.AuthForm onSubmit={onSubmit} onClick={(e) => e.stopPropagation()}>
-        <Logo $isBlackText={'black'} />
+        <Logo $isBlackText="black" />
         <p>Новый логин:</p>
         <S.FormInputFirst
           type="text"
@@ -33,7 +33,6 @@ const ChangeLogin = ({ active, setActive }) => {
         />
 
         <S.FormButton onClick={onInputChange}>Сохранить</S.FormButton>
-        
       </S.AuthForm>
     </S.PopupArea>
   )

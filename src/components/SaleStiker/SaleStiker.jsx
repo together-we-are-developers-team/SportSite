@@ -2,7 +2,7 @@ import React from 'react'
 import Sticker from '../../images/SaleSticker.png'
 import { StickerStyled } from './styles'
 
-const SaleSticker = () => {
+function SaleSticker() {
   return <StickerStyled src={Sticker} alt="стикер" />
 }
 

@@ -1,8 +1,7 @@
 import { React } from 'react'
 import * as S from './styles'
 
-
-const Cards = ({ titleCard, back }) => {
+function Cards({ titleCard, back }) {
   return (
     <S.Card
       $IsBack={back}
@@ -11,7 +10,7 @@ const Cards = ({ titleCard, back }) => {
       }}
     >
       <S.CardTitle>{titleCard}</S.CardTitle>
-      <S.greenButton> {'Перейти →'}</S.greenButton>
+      <S.greenButton> Перейти →</S.greenButton>
     </S.Card>
   )
 }

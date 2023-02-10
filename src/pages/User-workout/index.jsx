@@ -1,12 +1,13 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState, useEffect } from 'react'
+import ReactPlayer from 'react-player'
 import * as S from './styles'
 import Exercises from '../../components/Exercises'
 import WorkoutProgress from '../../components/Workout-progress'
-import ReactPlayer from 'react-player'
 import playIconVideo from '../../assests/static/playIconVideo.png'
 import WorkoutProgressForm from '../../components/Workout-progress/form/WorkoutProgressForm'
 
-const UserWorkout = () => {
+function UserWorkout() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const UserWorkout = () => {
           width="100%"
           height="640px"
           // light={true}
-          controls={true}
+          controls
           // playIcon={playIconVideo}
           style={{ 'margin-bottom': '75px' }}
         />

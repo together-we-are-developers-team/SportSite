@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './styles'
 
-const UserAccount = () => {
+function UserAccount() {
   return (
     <S.SideBar>
       <S.SideBarName>Сергей</S.SideBarName>
