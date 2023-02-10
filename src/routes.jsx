@@ -4,8 +4,8 @@ import Register from './pages/Register/Register'
 import Login from './pages/Login/Login'
 import MainPage from './pages/Main/Main'
 import NotFound from './pages/404/NotFound'
-import MyProfile from "./pages/MyProfile/Myprofile"
-
+import MyProfile from './pages/MyProfile/Myprofile'
+import AboutCourse from './pages/About-course'
 import { ProtectedRoute } from './components/protected-route/protected-route'
 import { useLoginMutation } from '../src/services/login'
 import { StyledApp, StyledAppWhite } from './components/App/styles'
@@ -27,17 +27,27 @@ export const AppRoutes = ({ isLoading }) => {
             <StyledApp>
               <MainPage isLoading={isLoading} />
             </StyledApp>
-            
-            {/* <MyProfile isLoading={isLoading} /> */}
           </ProtectedRoute>
         }
       ></Route>
-            <Route
+
+      <Route
         path="/myprofile"
         element={
           <ProtectedRoute isAllowed={user}>
             <StyledAppWhite>
               <MyProfile isLoading={isLoading} />
+            </StyledAppWhite>
+          </ProtectedRoute>
+        }
+      ></Route>
+
+      <Route
+        path="/courses/:id"
+        element={
+          <ProtectedRoute isAllowed={user}>
+            <StyledAppWhite>
+              <AboutCourse></AboutCourse>
             </StyledAppWhite>
           </ProtectedRoute>
         }
