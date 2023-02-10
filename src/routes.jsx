@@ -32,6 +32,7 @@ export function AppRoutes({ isLoading }) {
 
       <Route path="/signup" element={<Register />} />
       <Route path="/signin" element={<Login />} />
+
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
