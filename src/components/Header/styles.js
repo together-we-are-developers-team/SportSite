@@ -13,10 +13,6 @@ export const HeaderButton = styled.button`
   background: #140d40;
   border-radius: 46px;
   border: none;
-  font-family: 'StratosSkyeng';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
   line-height: 24px;
   text-align: center;
   color: #ffffff;
