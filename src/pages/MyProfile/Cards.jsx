@@ -1,6 +1,7 @@
 import { React } from 'react'
 import * as S from './styles'
 
+
 const Cards = ({ titleCard, back }) => {
   return (
     <S.Card

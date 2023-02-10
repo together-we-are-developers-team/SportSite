@@ -6,6 +6,7 @@ import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
 import Cards from './Cards'
 
+
 const MyProfile = () => {
   const [modalActive, setModalActive] = useState(false)
   const [modalLoginActive, setModalLoginActive] = useState(false)
@@ -17,35 +18,35 @@ const MyProfile = () => {
         <UserAccount />
       </S.MyprofileHeader>
 
-      <>
-        <S.MyprofileBlock>
-          <h2>Мой профиль</h2>
 
-          <p>Логин: sergey.petrov96</p>
-          <p>Пароль: 4fkhdj880d</p>
+      <S.MyprofileBlock>
+        <h2>Мой профиль</h2>
 
-          <S.Buttons>
-            <S.Button onClick={() => setModalLoginActive(true)}>
-              Редактировать логин
-            </S.Button>
+        <p>Логин: sergey.petrov96</p>
+        <p>Пароль: 4fkhdj880d</p>
 
-            <S.Button onClick={() => setModalActive(true)}>
-              Редактировать пароль
-            </S.Button>
-          </S.Buttons>
-        </S.MyprofileBlock>
+        <S.Buttons>
+          <S.Button onClick={() => setModalLoginActive(true)}>
+            Редактировать логин
+          </S.Button>
 
-        <h2>Мои курсы</h2>
+          <S.Button onClick={() => setModalActive(true)}>
+            Редактировать пароль
+          </S.Button>
+        </S.Buttons>
+      </S.MyprofileBlock>
 
-        <S.MyprofileCards>
-          <Cards titleCard={'Йога'} back={'card-yoga'} />
-          <Cards titleCard={'Стретчинг'} back={'card-strench'} />
-          <Cards titleCard={'Бодифлекс'} back={'card-body'} />
-        </S.MyprofileCards>
+      <h2>Мои курсы</h2>
 
-        <ModalPassword active={modalActive} setActive={setModalActive} />
-        <ModalLogin active={modalLoginActive} setActive={setModalLoginActive} />
-      </>
+      <S.MyprofileCards>
+        <Cards titleCard={'Йога'} back={'card-yoga'} />
+        <Cards titleCard={'Стретчинг'} back={'card-strench'} />
+        <Cards titleCard={'Бодифлекс'} back={'card-body'} />
+      </S.MyprofileCards>
+
+      <ModalPassword active={modalActive} setActive={setModalActive} />
+      <ModalLogin active={modalLoginActive} setActive={setModalLoginActive} />
+
     </S.Myprofile>
   )
 }
