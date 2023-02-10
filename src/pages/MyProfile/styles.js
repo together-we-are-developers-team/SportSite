@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import styled, { css } from 'styled-components'
 import cardYoga from '../../images/card-yoga.png'
 import cardStrench from '../../images/card-strench.png'
@@ -52,9 +53,9 @@ export const Button = styled.button`
   }
 `
 export const Buttons = styled.div`
-    margin-top: 40px;
-    margin-bottom 75px;
-    gap: 14px;
+  margin-top: 40px;
+  margin-bottom: 75px;
+  gap: 14px;
 `
 
 export const greenButton = styled.button`

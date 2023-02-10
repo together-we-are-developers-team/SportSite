@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import styled, { css } from 'styled-components'
 import cardYoga from '../../images/card-yoga.png'
 import cardStrench from '../../images/card-strench.png'
