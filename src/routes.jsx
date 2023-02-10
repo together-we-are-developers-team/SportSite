@@ -6,6 +6,7 @@ import MainPage from './pages/Main/Main'
 import NotFound from './pages/404/NotFound'
 import MyProfile from './pages/MyProfile/Myprofile'
 import AboutCourse from './pages/About-course'
+import UserWorkout from './pages/User-workout'
 import { ProtectedRoute } from './components/protected-route/protected-route'
 import { useLoginMutation } from '../src/services/login'
 import { StyledApp, StyledAppWhite } from './components/App/styles'
@@ -32,6 +33,17 @@ export const AppRoutes = ({ isLoading }) => {
       ></Route>
 
       <Route
+        path="/courses/:id"
+        element={
+          <ProtectedRoute isAllowed={user}>
+            <StyledAppWhite>
+              <AboutCourse></AboutCourse>
+            </StyledAppWhite>
+          </ProtectedRoute>
+        }
+      ></Route>
+
+      <Route
         path="/myprofile"
         element={
           <ProtectedRoute isAllowed={user}>
@@ -43,11 +55,11 @@ export const AppRoutes = ({ isLoading }) => {
       ></Route>
 
       <Route
-        path="/courses/:id"
+        path="/myprofile/courses/:id"
         element={
           <ProtectedRoute isAllowed={user}>
             <StyledAppWhite>
-              <AboutCourse></AboutCourse>
+              <UserWorkout />
             </StyledAppWhite>
           </ProtectedRoute>
         }
