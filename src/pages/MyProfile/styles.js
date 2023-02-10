@@ -17,6 +17,12 @@ export const MyprofileHeader = styled.section`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 36px;
+`
+export const MyprofileBlock = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 304px;
+  height: 286px;
   margin-bottom: 75px;
 `
 
@@ -24,13 +30,9 @@ export const MyprofileCards = styled.section`
   display: flex;
   flex-direction: row;
   gap: 40px;
+  margin-top: 60px;
 `
-export const MyprofileBlock = styled.section`
-  display: flex;
-  flex-direction: column;
-  width: 310px;
-  height: 300px;
-`
+
 export const Button = styled.button`
   width: 278px;
   height: 52px;
