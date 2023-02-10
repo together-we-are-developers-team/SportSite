@@ -6,11 +6,11 @@ import MainPage from './pages/Main/Main'
 import NotFound from './pages/404/NotFound'
 import MyProfile from './pages/MyProfile/Myprofile'
 import AboutCourse from './pages/About-course'
+import UserWorkout from './pages/User-workout'
 import { ProtectedRoute } from './components/protected-route/protected-route'
-import { useLoginMutation } from '../src/services/login'
-import { StyledApp, StyledAppWhite } from './components/App/styles'
+import { useLoginMutation } from './services/login'
 
-export const AppRoutes = ({ isLoading }) => {
+export function AppRoutes({ isLoading }) {
   const [user, setUser] = React.useState(true)
   const { data } = useLoginMutation()
   if (data) {
@@ -20,41 +20,18 @@ export const AppRoutes = ({ isLoading }) => {
 
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <ProtectedRoute isAllowed={user}>
-            <StyledApp>
-              <MainPage isLoading={isLoading} />
-            </StyledApp>
-          </ProtectedRoute>
-        }
-      ></Route>
+      <Route element={<ProtectedRoute isAllowed={user} />}>
+        <Route path="/" element={<MainPage isLoading={isLoading} />} />
+        <Route path="/courses/:id" element={<AboutCourse />} />
+        <Route
+          path="/myprofile"
+          element={<MyProfile isLoading={isLoading} />}
+        />
+        <Route path="/myprofile/courses/:id" element={<UserWorkout />} />
+      </Route>
 
-      <Route
-        path="/myprofile"
-        element={
-          <ProtectedRoute isAllowed={user}>
-            <StyledAppWhite>
-              <MyProfile isLoading={isLoading} />
-            </StyledAppWhite>
-          </ProtectedRoute>
-        }
-      ></Route>
-
-      <Route
-        path="/courses/:id"
-        element={
-          <ProtectedRoute isAllowed={user}>
-            <StyledAppWhite>
-              <AboutCourse></AboutCourse>
-            </StyledAppWhite>
-          </ProtectedRoute>
-        }
-      ></Route>
-
-      <Route path="/signup" element={<Register />}></Route>
-      <Route path="/signin" element={<Login />}></Route>
+      <Route path="/signup" element={<Register />} />
+      <Route path="/signin" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

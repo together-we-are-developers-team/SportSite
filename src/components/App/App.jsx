@@ -1,33 +1,17 @@
-import { React } from 'react'
-import { createGlobalStyle } from 'styled-components'
+import React from 'react'
+import { useLocation } from 'react-router-dom'
 import { AppRoutes } from '../../routes'
-import { Fragment } from 'react'
+import * as S from './styles'
+import { GlobalStyle } from './global-styles'
 
-const GlobalStyle = createGlobalStyle`
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-a{
-  textDecoration: none;
-}
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
- 
-}
-`
+function App() {
+  const { pathname } = useLocation()
 
-const App = () => {
   return (
-    <Fragment>
-      <GlobalStyle />
+    <S.AppWrapper>
+      <GlobalStyle location={pathname} />
       <AppRoutes />
-    </Fragment>
+    </S.AppWrapper>
   )
 }
 
