@@ -1,5 +1,5 @@
 import React from 'react'
-import Sticker from '../../images/SaleSticker.png'
+import Sticker from '../../assests/static/SaleSticker.png'
 import { StickerStyled } from './styles'
 
 function SaleSticker() {
