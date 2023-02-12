@@ -4,6 +4,7 @@ import Logo from '../../components/Logo/Logo'
 import UserAccount from '../../components/UserAccount/UserAccount'
 import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
+// У тебя есть уже компонент <Card> не надо копировать и помещать к себе в страницу, см. src\components\Main\Main.jsx 25 строка, описал как лучше сделать
 import Cards from './Cards'
 
 function MyProfile() {
@@ -12,11 +13,6 @@ function MyProfile() {
 
   return (
     <S.Myprofile>
-      <S.MyprofileHeader>
-        <Logo $isBlackText />
-        <UserAccount />
-      </S.MyprofileHeader>
-
       <S.MyprofileBlock>
         <h2>Мой профиль</h2>
 
