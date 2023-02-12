@@ -2,7 +2,7 @@ import React from 'react'
 import * as S from './styles'
 
 function Button({
-  buttonName,
+  children,
   isTransparent,
   isHeaderButton,
   isGreen,
@@ -10,20 +10,20 @@ function Button({
   isVisible,
 }) {
   if (isGreen) {
-    return <S.greenButton onClick={callback}>{buttonName}</S.greenButton>
+    return <S.greenButton onClick={callback}>{children}</S.greenButton>
   }
 
   if (isHeaderButton) {
     return (
       <S.headerButton visible={isVisible} onClick={callback}>
-        {buttonName}
+        {children}
       </S.headerButton>
     )
   }
 
   return (
     <S.mainButton onClick={callback} transparent={isTransparent}>
-      {buttonName}
+      {children}
     </S.mainButton>
   )
 }
