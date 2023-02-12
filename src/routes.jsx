@@ -20,9 +20,10 @@ export function AppRoutes({ isLoading }) {
 
   return (
     <Routes>
+      <Route path="/" element={<MainPage isLoading={isLoading} />} />
+      <Route path="/courses/:id" element={<AboutCourse />} />
+
       <Route element={<ProtectedRoute isAllowed={user} />}>
-        <Route path="/" element={<MainPage isLoading={isLoading} />} />
-        <Route path="/courses/:id" element={<AboutCourse />} />
         <Route
           path="/myprofile"
           element={<MyProfile isLoading={isLoading} />}
