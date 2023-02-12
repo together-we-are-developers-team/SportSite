@@ -55,10 +55,12 @@ export const MainUpButton = styled.button`
   color: #000000;
   align-self: center;
   border: none;
-  &:hover {
+
+  :hover {
     background: #daf289;
   }
-  $:active {
+
+  :active {
     background: #ebffab;
   }
 `
