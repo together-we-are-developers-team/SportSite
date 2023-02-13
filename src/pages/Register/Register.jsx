@@ -1,10 +1,10 @@
-import AuthForm from '../../components/AuthForm/AuthForm'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import AuthForm from '../../components/AuthForm/AuthForm'
 import { StyledRegister } from './styles'
 import useFormWithValidation from '../../utils/useFormWithValidation'
-import { useNavigate } from 'react-router-dom'
 
-const Register = () => {
+function Register() {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormWithValidation()
   const [mathPasswordsError, setMathPassordsError] = useState('')
@@ -16,13 +16,12 @@ const Register = () => {
       values.password &&
       values.repeat_password
     ) {
-      //onRegister(values);
+      // onRegister(values);
       console.log(values)
       resetForm()
       navigate('/signin')
     }
     setMathPassordsError('Пароли не совпадают')
-    return
   }
 
   return (
@@ -34,7 +33,7 @@ const Register = () => {
         errors={errors}
         isValid={isValid}
         mathPasswordsError={mathPasswordsError}
-      ></AuthForm>
+      />
     </StyledRegister>
   )
 }

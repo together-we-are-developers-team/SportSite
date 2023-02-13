@@ -1,3 +1,4 @@
+/* eslint-disable default-param-last */
 import { GET_USER } from '../actions/types/user'
 
 const initialState = {}

@@ -17,12 +17,15 @@ export const HeaderButton = styled.button`
   text-align: center;
   color: #ffffff;
   cursor: pointer;
-  &:hover {
+
+  :hover {
     background: #2d1f79;
   }
-  $:active {
+
+  :active {
     background: #3b29a1;
   }
+
   ${(props) =>
     props.$IsUserLogged &&
     css`

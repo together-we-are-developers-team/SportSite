@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useRef } from 'react'
 import * as S from './styles'
 import { useOnClickOutside } from '../../../hooks/useOnClickOutside'
 import Button from '../../Button/Button'
 
-const WorkoutProgressForm = ({ setVisible }) => {
+function WorkoutProgressForm({ setVisible }) {
   const formRef = useRef()
   useOnClickOutside(formRef, () => setVisible(false))
 

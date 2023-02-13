@@ -1,34 +1,24 @@
+import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import { StyledHeader } from './styles'
 import UserAccount from '../UserAccount/UserAccount'
-import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
 import Button from '../Button/Button'
 
-const Header = ({ $isBlackText }) => {
+function Header({ location }) {
   const navigate = useNavigate()
   const userLogged = false
 
   return (
     <StyledHeader>
-      <Logo $isBlackText={$isBlackText} />
-      {userLogged && (
-        <Fragment>
-          <UserAccount $isBlackText={$isBlackText} />
-        </Fragment>
-      )}
+      <Logo location={location} />
+      {userLogged && <UserAccount location={location} />}
       {!userLogged && (
-        <Fragment>
-          <Link to="/signin" title="Войти.">
-            <Button
-              buttonName="Войти"
-              isHeaderButton={true}
-              isVisible={true}
-              onClick={() => navigate('/signin')}
-            />
-          </Link>
-        </Fragment>
+        <Link to="/signin" title="Войти.">
+          <Button isHeaderButton isVisible onClick={() => navigate('/signin')}>
+            Войти
+          </Button>
+        </Link>
       )}
     </StyledHeader>
   )

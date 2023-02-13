@@ -1,9 +1,10 @@
-import styled, { css } from 'styled-components'
-import cardYoga from '../../images/card-yoga.png'
-import cardStrench from '../../images/card-strench.png'
-import cardStep from '../../images/card-step.png'
-import cardDance from '../../images/card-dance.png'
-import cardBody from '../../images/card-body.png'
+/* eslint-disable no-nested-ternary */
+import styled from 'styled-components'
+import cardYoga from '../../components/Card/images/card-yoga.png'
+import cardStrench from '../../components/Card/images/card-strench.png'
+import cardStep from '../../components/Card/images/card-step.png'
+import cardDance from '../../components/Card/images/card-dance.png'
+import cardBody from '../../components/Card/images/card-body.png'
 
 export const Myprofile = styled.section`
   display: flex;
@@ -44,17 +45,19 @@ export const Button = styled.button`
   margin-top: 30px;
   box-sizing: border-box;
   color: #ffffff;
+
   &:hover {
     background: #3f007d;
   }
-  $:active {
+
+  :active {
     background: #271a58;
   }
 `
 export const Buttons = styled.div`
-    margin-top: 40px;
-    margin-bottom 75px;
-    gap: 14px;
+  margin-top: 40px;
+  margin-bottom: 75px;
+  gap: 14px;
 `
 
 export const greenButton = styled.button`
