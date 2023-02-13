@@ -15,9 +15,8 @@ function Header({ location }) {
       {userLogged && <UserAccount location={location} />}
       {!userLogged && (
         <Link to="/signin" title="Войти.">
-          <Button isHeaderButton isVisible onClick={() => navigate('/signin')}>
-            Войти
-          </Button>
+          <Button buttonName='Войти' isHeaderButton isVisible callback={() => navigate('/signin')}/>
+
         </Link>
       )}
     </StyledHeader>

@@ -3,6 +3,11 @@ import SaleStiker from '../SaleStiker/SaleStiker'
 import Card from '../Card/Card'
 import * as S from './styles'
 import Button from '../Button/Button'
+import cardBody from '../Card/images/card-body.png'
+import cardDance from '../Card/images/card-dance.png'
+import cardStep from '../Card/images/card-step.png'
+import cardStretch from '../Card/images/card-strench.png'
+import cardYoga from '../Card/images/card-yoga.png'
 
 function Main() {
   const UpWindow = () => {
@@ -13,6 +18,34 @@ function Main() {
     })
   }
 
+  const cardMockData = [
+    {
+      id: 1,
+      title: 'Йога',
+      image: cardYoga,
+    },
+    {
+      id: 2,
+      title: 'Стретчинг',
+      image: cardStretch,
+    },
+    {
+      id: 3,
+      title: 'Танцевальный фитнес',
+      image: cardDance,
+    },
+    {
+      id: 4,
+      title: 'Степ-аэробика',
+      image: cardStep,
+    },
+    {
+      id: 5,
+      title: 'Бодифлекс',
+      image: cardBody,
+    },
+  ]
+
   return (
     <div>
       <S.Main>
@@ -22,13 +55,17 @@ function Main() {
         </S.MainTitle>
         {/* <SaleStiker /> Если просто 1 фото, которое нигде не переиспользуется, лучше не делать отдельный компонент */}
         <SaleStiker />
-        {/*   <S.MainCards> Лучше сделать отдльный компонент и сделать моковые данные, и перебирать массивом, тогда в стилях карточки(компонент <Card>) не надо будет ставить if else так много для картинок(backgroundImage) */}
+
         <S.MainCards>
-          <Card titleCard="Йога" back="card-yoga" />
-          <Card titleCard="Стретчинг" back="card-strench" />
-          <Card titleCard="Танцевальный фитнес" back="card-dance" />
-          <Card titleCard="Степ-аэробика" back="card-step" />
-          <Card titleCard="Бодифлекс" back="card-body" />{' '}
+          {cardMockData
+            ? cardMockData.map((element) => (
+                <Card
+                  titleCard={element.title}
+                  cardImage={element.image}
+                  key={element.id}
+                />
+              ))
+            : null}
         </S.MainCards>
         <Button callback={UpWindow} isGreen buttonName="Наверх 🠕" />
       </S.Main>

@@ -10,7 +10,6 @@ export const MainTitle = styled.h1`
   margin-bottom: 52px;
   width: 830px;
   height: 110px;
-  font-family: 'StratosSkyeng';
   font-style: normal;
   font-weight: 400;
   font-size: 60px;
@@ -22,7 +21,6 @@ export const MainTitle = styled.h1`
 export const MainSubTitle = styled.h3`
   width: 363px;
   height: 23px;
-  font-family: 'StratosSkyeng';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -36,31 +34,5 @@ export const MainCards = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 44px 37px;
-`
-export const MainUpButton = styled.button`
-  margin-top: 34px;
-  cursor: pointer;
-  width: 147px;
-  height: 48px;
-  background: #c7e957;
-  border-radius: 46px;
-  font-family: 'StratosSkyeng';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
-  text-align: center;
-  letter-spacing: -0.1px;
-  font-feature-settings: 'pnum' on, 'lnum' on;
-  color: #000000;
-  align-self: center;
-  border: none;
-
-  :hover {
-    background: #daf289;
-  }
-
-  :active {
-    background: #ebffab;
-  }
+  margin-bottom: 34px;
 `
