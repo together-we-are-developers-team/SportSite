@@ -21,7 +21,11 @@ export const Card = styled.div`
   }
 `
 export const CardTitle = styled.h3`
+  font-style: normal;
+  font-weight: 800;
   font-size: 36px;
+  width: 290px;
+  height: 120px;
   margin: 30px 0 0 30px;
   line-height: 110%;
   letter-spacing: -0.5px;
