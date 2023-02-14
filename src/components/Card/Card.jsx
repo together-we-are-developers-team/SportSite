@@ -1,10 +1,10 @@
 import { React } from 'react'
 import * as S from './styles'
 
-function Card({ titleCard, back }) {
+function Card({ titleCard, cardImage }) {
   return (
     <S.Card
-      $IsBack={back}
+      cardImage={cardImage}
       onClick={() => {
         console.log('click')
       }}
