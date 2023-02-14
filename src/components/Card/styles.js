@@ -21,8 +21,6 @@ export const Card = styled.div`
   }
 `
 export const CardTitle = styled.h3`
-  width: 290px;
-  height: 120px;
   font-size: 36px;
   margin: 30px 0 0 30px;
   line-height: 110%;
