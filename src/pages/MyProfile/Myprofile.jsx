@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import * as S from './styles'
-import Logo from '../../components/Logo/Logo'
-import UserAccount from '../../components/UserAccount/UserAccount'
 import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
-// У тебя есть уже компонент <Card> не надо копировать и помещать к себе в страницу, см. src\components\Main\Main.jsx 25 строка, описал как лучше сделать
-import Cards from './Cards'
+import Card from '../../components/Card/Card'
 
 function MyProfile() {
   const [modalActive, setModalActive] = useState(false)
@@ -14,10 +11,10 @@ function MyProfile() {
   return (
     <S.Myprofile>
       <S.MyprofileBlock>
-        <h2>Мой профиль</h2>
 
-        <p>Логин: sergey.petrov96</p>
-        <p>Пароль: 4fkhdj880d</p>
+        <S.Title>Мой профиль</S.Title>
+        <S.Paragraph>Логин: sergey.petrov96</S.Paragraph>
+        <S.Paragraph>Пароль: 4fkhdj880d</S.Paragraph>
 
         <S.Buttons>
           <S.Button onClick={() => setModalLoginActive(true)}>
@@ -30,14 +27,25 @@ function MyProfile() {
         </S.Buttons>
       </S.MyprofileBlock>
 
-      <h2>Мои курсы</h2>
+      <S.Subtitle>Мои курсы</S.Subtitle>
+      
+      <S.myProfileCardsBlock>
+        <S.myprofileCards>
+          <Card titleCard="Йога" back="card-yoga"/>
+          <S.ForwardCardGraanBtn>Перейти →</S.ForwardCardGraanBtn>
+        </S.myprofileCards>
 
-      <S.MyprofileCards>
-        <Cards titleCard="Йога" back="card-yoga" />
-        <Cards titleCard="Стретчинг" back="card-strench" />
-        <Cards titleCard="Бодифлекс" back="card-body" />
-      </S.MyprofileCards>
+        <S.myprofileCards>
+          <Card titleCard="Стретчинг" back="card-strench"/>
+          <S.ForwardCardGraanBtn>Перейти →</S.ForwardCardGraanBtn>
+        </S.myprofileCards>
 
+        <S.myprofileCards>
+          <Card titleCard="Бодифлекс" back="card-body"/>
+          <S.ForwardCardGraanBtn>Перейти →</S.ForwardCardGraanBtn>
+        </S.myprofileCards>
+      </S.myProfileCardsBlock>
+      
       <ModalPassword active={modalActive} setActive={setModalActive} />
       <ModalLogin active={modalLoginActive} setActive={setModalLoginActive} />
     </S.Myprofile>
