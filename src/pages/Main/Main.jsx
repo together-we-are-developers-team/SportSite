@@ -47,27 +47,25 @@ function Main() {
   ]
 
   return (
-    <div>
-      <S.Main>
-        <S.MainSubTitle>Онлайн-тренировки для занятий дома</S.MainSubTitle>
-        <S.MainTitle>
-          Начните заниматься спортом и улучшите качество жизни
-        </S.MainTitle>
-        {/* <SaleStiker /> Если просто 1 фото, которое нигде не переиспользуется, лучше не делать отдельный компонент */}
-        <SaleStiker />
+    <S.Main>
+      <S.MainSubTitle>Онлайн-тренировки для занятий дома</S.MainSubTitle>
+      <S.MainTitle>
+        Начните заниматься спортом и улучшите качество жизни
+      </S.MainTitle>
+      {/* <SaleStiker /> Если просто 1 фото, которое нигде не переиспользуется, лучше не делать отдельный компонент */}
+      <SaleStiker />
 
-        <S.MainCards>
-          {cardMockData?.map((element) => (
-            <Card
-              titleCard={element.title}
-              cardImage={element.image}
-              key={element.id}
-            />
-          ))}
-        </S.MainCards>
-        <Button callback={UpWindow} isGreen buttonName="Наверх 🠕" />
-      </S.Main>
-    </div>
+      <S.MainCards>
+        {cardMockData?.map((element) => (
+          <Card
+            titleCard={element.title}
+            cardImage={element.image}
+            key={element.id}
+          />
+        ))}
+      </S.MainCards>
+      <Button callback={UpWindow} isGreen buttonName="Наверх 🠕" />
+    </S.Main>
   )
 }
 
