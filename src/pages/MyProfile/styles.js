@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { greenButton } from '../../components/Button/styles'
 
-export const Myprofile = styled.section`
+export const MyprofileBlock = styled.section`
   display: flex;
   flex-direction: column;
 `
@@ -13,7 +13,7 @@ export const MyprofileHeader = styled.section`
   margin-top: 36px;
 `
 
-export const MyprofileBlock = styled.section`
+export const MyprofileUserInfo = styled.section`
   display: flex;
   flex-direction: column;
   width: 304px;
@@ -42,7 +42,7 @@ export const Button = styled.button`
   }
 `
 
-export const Buttons = styled.div`
+export const MyprofileUserChangeButtons = styled.div`
   gap: 14px;
 `
 
@@ -74,20 +74,20 @@ export const Paragraph = styled.p`
   margin-bottom: 20px;
 `
 
-export const ForwardCardGraanBtn = styled(greenButton)`
+export const ForwardCardGreenBtn = styled(greenButton)`
   position: absolute;
   left: 30px;
   bottom: 27px;
 
 `
 
-export const myProfileCardsBlock = styled.div`
+export const MyProfileCardsBlock = styled.div`
   display: flex;
   flex-direction: row;
   gap: 40px;
 `
 
-export const myprofileCards = styled.section`
+export const MyprofileCards = styled.section`
   display: flex;
   flex-direction: row;
   position: relative;

@@ -9,14 +9,14 @@ function MyProfile() {
   const [modalLoginActive, setModalLoginActive] = useState(false)
 
   return (
-    <S.Myprofile>
-      <S.MyprofileBlock>
+    <S.MyprofileBlock>
+      <S.MyprofileUserInfo>
 
         <S.Title>Мой профиль</S.Title>
         <S.Paragraph>Логин: sergey.petrov96</S.Paragraph>
         <S.Paragraph>Пароль: 4fkhdj880d</S.Paragraph>
 
-        <S.Buttons>
+        <S.MyprofileUserChangeButtons>
           <S.Button onClick={() => setModalLoginActive(true)}>
             Редактировать логин
           </S.Button>
@@ -24,31 +24,31 @@ function MyProfile() {
           <S.Button onClick={() => setModalActive(true)}>
             Редактировать пароль
           </S.Button>
-        </S.Buttons>
-      </S.MyprofileBlock>
+        </S.MyprofileUserChangeButtons>
+      </S.MyprofileUserInfo>
 
       <S.Subtitle>Мои курсы</S.Subtitle>
       
-      <S.myProfileCardsBlock>
-        <S.myprofileCards>
+      <S.MyProfileCardsBlock>
+        <S.MyprofileCards>
           <Card titleCard="Йога" back="card-yoga"/>
-          <S.ForwardCardGraanBtn>Перейти →</S.ForwardCardGraanBtn>
-        </S.myprofileCards>
+          <S.ForwardCardGreenBtn>Перейти →</S.ForwardCardGreenBtn>
+        </S.MyprofileCards>
 
-        <S.myprofileCards>
+        <S.MyprofileCards>
           <Card titleCard="Стретчинг" back="card-strench"/>
-          <S.ForwardCardGraanBtn>Перейти →</S.ForwardCardGraanBtn>
-        </S.myprofileCards>
+          <S.ForwardCardGreenBtn>Перейти →</S.ForwardCardGreenBtn>
+        </S.MyprofileCards>
 
-        <S.myprofileCards>
+        <S.MyprofileCards>
           <Card titleCard="Бодифлекс" back="card-body"/>
-          <S.ForwardCardGraanBtn>Перейти →</S.ForwardCardGraanBtn>
-        </S.myprofileCards>
-      </S.myProfileCardsBlock>
+          <S.ForwardCardGreenBtn>Перейти →</S.ForwardCardGreenBtn>
+        </S.MyprofileCards>
+      </S.MyProfileCardsBlock>
       
       <ModalPassword active={modalActive} setActive={setModalActive} />
       <ModalLogin active={modalLoginActive} setActive={setModalLoginActive} />
-    </S.Myprofile>
+    </S.MyprofileBlock>
   )
 }
 
