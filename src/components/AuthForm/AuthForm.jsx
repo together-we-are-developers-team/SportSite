@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import * as S from './styles'
 import Button from '../Button/Button'
 
 function AuthForm({
+
   values,
   onSubmit,
   onChange,
@@ -40,18 +41,17 @@ function AuthForm({
         />
         <S.FormSpan $isValid={isValid}>{errors.password}</S.FormSpan>
         {pathname !== '/signin' && (
-          <>
-            <S.FormInput
-              type="password"
-              name="repeat_password"
-              placeholder="Повторите пароль"
-              minLength="8"
-              value={values.repeat_password || ''}
-              onChange={(event) => onChange(event)}
-              required
-            />
-            <S.FormSpan $isValid={isValid}>{errors.repeat_password}</S.FormSpan>
-          </>
+          
+          
+            <><S.FormInput
+            type="password"
+            name="repeat_password"
+            placeholder="Повторите пароль"
+            minLength="8"
+            value={values.repeat_password || ''}
+            onChange={(event) => onChange(event)}
+            required /><S.FormSpan $isValid={isValid}>{errors.repeat_password}</S.FormSpan></>
+          
         )}
 
         <S.FormSpanSubmit $isValid={isValid}>
@@ -62,13 +62,13 @@ function AuthForm({
         </S.FormButton>
 
         {pathname === '/signin' && (
-          <S.FormButtonRegister
-            type="button"
-            title="Перейти к регистрации."
-            onClick={() => navigate('/signup')}
-          >
-            Зарегистрироваться
-          </S.FormButtonRegister>
+          <><S.FormButtonRegister
+                type="button"
+                title="Перейти к регистрации."
+                onClick={() => navigate('/signup')}
+              >
+                Зарегистрироваться
+              </S.FormButtonRegister></>
         )}
       </S.AuthForm>
     </S.PopupArea>

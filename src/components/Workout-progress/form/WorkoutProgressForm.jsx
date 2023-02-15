@@ -7,9 +7,7 @@ import { useOnClickOutside } from '../../../hooks/useOnClickOutside'
 import Button from '../../Button/Button'
 import { setUser, getProgress } from '../../../store/slices/userSlices'
 
-function WorkoutProgressForm({ setVisible, exercisesPopup }) {
-  // приходит массив с заголовками для модального окна изменнения прогресса exercisesPopup
-
+const WorkoutProgressForm = ({ setVisible, exercisesPopup }) => {
   const formRef = useRef()
   const dispatch = useDispatch()
   // инпуты
@@ -51,11 +49,12 @@ function WorkoutProgressForm({ setVisible, exercisesPopup }) {
     event.preventDefault()
     createUserProgress()
   }
+
   return (
     <S.FormWrapper ref={formRef} onSubmit={onSubmit}>
       <h2>Мой прогресс</h2>
       <S.ProgressForm>
-        {exercisesPopup.map((item, i) => (
+      {exercisesPopup.map((item, i) => (
           <label>
             {item}
             <S.FormInput
@@ -66,11 +65,12 @@ function WorkoutProgressForm({ setVisible, exercisesPopup }) {
             />
           </label>
         ))}
-
-        <Button buttonName="Отправить" type="submit" onClick={onSubmit} />
+       
+        <Button buttonName="Отправить" type="submit" />
       </S.ProgressForm>
     </S.FormWrapper>
   )
 }
 
 export default WorkoutProgressForm
+

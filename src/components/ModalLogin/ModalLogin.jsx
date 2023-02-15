@@ -15,6 +15,7 @@ function ChangeLogin({ active, setActive, changeEmail }) {
     changeEmail(valueName)
   }
 
+  
   if (!active) {
     return null
   }
@@ -23,6 +24,7 @@ function ChangeLogin({ active, setActive, changeEmail }) {
     <S.PopupArea onClick={() => setActive(false)}>
       <S.AuthForm onSubmit={onSubmit} onClick={(e) => e.stopPropagation()}>
         <Logo $isBlackText="black" />
+       
         <p>Новый логин:</p>
         <S.FormInputFirst
           type="text"

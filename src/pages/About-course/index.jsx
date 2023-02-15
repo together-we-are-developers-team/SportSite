@@ -7,9 +7,8 @@ import Button from '../../components/Button/Button'
 import * as S from './styles'
 import backgroundTitleBlock from './img/back.png'
 import phoneImg from '../../assests/static/phone.png'
-import { useAuth } from '../../hooks/use-auth'
 import { useCourses } from '../../hooks/use-courses'
-import { getCourses } from '../../store/slices/coursesSlices'
+import { useAuth } from '../../hooks/use-auth'
 
 function AboutCourse() {
   const { id } = useParams()
@@ -69,10 +68,10 @@ function AboutCourse() {
   return (
     <S.Main>
       <S.TitleWrapper bg={backgroundTitleBlock}>
-        <h1>{nameRu}</h1>
+        <S.Title>{nameRu}</S.Title>
       </S.TitleWrapper>
       <section>
-        <h2>Подойдет для вас, если:</h2>
+        <S.FitTitle>Подойдет для вас, если:</S.FitTitle>
         <S.FitForYouWrapper>
           {suitable?.map((data, index) => (
             <S.FitForYouItem key={index + 1}>
@@ -83,15 +82,17 @@ function AboutCourse() {
         </S.FitForYouWrapper>
       </section>
       <section>
-        <h2>Направления:</h2>
+        <S.DirectionTitle>Направления:</S.DirectionTitle>
         <S.DirectionsList>
           {directions?.map((data, index) => (
             <S.DirectionItem key={index + 1}>{data}</S.DirectionItem>
           ))}
         </S.DirectionsList>
       </section>
-
+      <S.WorkoutDescription>
       {description}
+      </S.WorkoutDescription>
+      
 
       <S.TrialWorkoutBlock>
         <div>
@@ -100,9 +101,9 @@ function AboutCourse() {
             выбором направления и тренера, с которым тренировки принесут
             здоровье и радость!
           </S.TrialWorkoutDescription>
-          <Button buttonName="Записаться на тренировку" />
+          <S.TrialButton>Записаться на тренировку</S.TrialButton>
         </div>
-        <img src={phoneImg} alt="phone" />
+        <S.TrialPhoneImg src={phoneImg} alt="phone" />
       </S.TrialWorkoutBlock>
     </S.Main>
   )

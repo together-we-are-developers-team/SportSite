@@ -1,10 +1,7 @@
 /* eslint-disable no-nested-ternary */
+/* eslint-disable no-nested-ternary */
 import styled, { css } from 'styled-components'
-import cardYoga from './images/card-yoga.png'
-import cardStrench from './images/card-strench.png'
-import cardStep from './images/card-step.png'
-import cardDance from './images/card-dance.png'
-import cardBody from './images/card-body.png'
+
 
 export const Card = styled.div`
   cursor: pointer;
@@ -14,24 +11,20 @@ export const Card = styled.div`
   backdrop-filter: blur(14.5187px);
   border-radius: 30px;
   background-size: auto;
-  background-image: url(${(props) =>
-    props.$IsBack === 'card-Yoga'
-      ? cardYoga
-      : props.$IsBack === 'card-Strench'
-      ? cardStrench
-      : props.$IsBack === 'card-Step'
-      ? cardStep
-      : props.$IsBack === 'card-Dance'
-      ? cardDance
-      : cardBody});
+  background-image: url(${({cardImage}) =>
+    cardImage });
   background-position: center;
   box-shadow: 10px -10px 16px rgba(0, 0, 0, 0.1),
     -10px 10px 15.9988px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
   &:hover {
     scale: 1.01;
   }
 `
 export const CardTitle = styled.h3`
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
   width: 290px;
   height: 120px;
   margin: 30px 0 0 30px;

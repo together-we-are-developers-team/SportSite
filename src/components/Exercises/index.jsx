@@ -1,4 +1,5 @@
 /* eslint-disable react/no-array-index-key */
+/* eslint-disable react/no-array-index-key */
 import React from 'react'
 import * as S from './styles'
 import Button from '../Button/Button'
@@ -10,6 +11,7 @@ function Exercises({ visible, setVisible, exercises }) {
     'Наклон назад (10 повторений)',
     'Поднятие ног, согнутых в коленях (5 повторений)',
   ]
+
 
   return (
     <div>
