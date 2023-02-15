@@ -6,7 +6,6 @@ function Card({ titleCard, cardImage }) {
     <S.Card
       cardImage={cardImage}
       onClick={() => {
-        console.log('click')
       }}
     >
       <S.CardTitle>{titleCard}</S.CardTitle>

@@ -10,7 +10,6 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault()
     // onLogin(values);
-    console.log(values)
     resetForm()
   }
 

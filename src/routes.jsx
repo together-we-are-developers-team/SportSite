@@ -15,7 +15,6 @@ export function AppRoutes({ isLoading }) {
   const { data } = useLoginMutation()
   if (data) {
     setUser(data)
-    console.log(user)
   }
 
   return (
