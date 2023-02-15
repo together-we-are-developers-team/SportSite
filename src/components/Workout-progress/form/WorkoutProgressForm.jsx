@@ -19,7 +19,7 @@ const WorkoutProgressForm = ({ setVisible, exercisesPopup }) => {
   // функция отправки данных об изменении прогресса  и последующего забора изменных данных обратно в сторе
   function createUserProgress() {
     const db = getDatabase()
-    console.log('dd2')
+  
     set(ref(db, `/progress/3yRjRDMK7SRZVtrLlB18LbeWuSJ2/workouts/yoga01/`), {
       target: 20,
       user: Number(value),
