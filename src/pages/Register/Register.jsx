@@ -17,7 +17,6 @@ function Register() {
       values.repeat_password
     ) {
       // onRegister(values);
-      console.log(values)
       resetForm()
       navigate('/signin')
     }
