@@ -1,34 +1,26 @@
+import React, { Fragment } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import { StyledHeader } from './styles'
 import UserAccount from '../UserAccount/UserAccount'
-import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
 import Button from '../Button/Button'
+import { useAuth } from '../../hooks/use-auth'
+// для разлогинивания функция и импорт //import{removeUser} from '../../store/slices/userSlices' onClick={()=>dispatch(removeUser())}
 
-const Header = ({ $isBlackText }) => {
+function Header({ location }) {
   const navigate = useNavigate()
-  const userLogged = false
+  const { isAuth, email } = useAuth()
 
   return (
     <StyledHeader>
-      <Logo $isBlackText={$isBlackText} />
-      {userLogged && (
-        <Fragment>
-          <UserAccount $isBlackText={$isBlackText} />
-        </Fragment>
-      )}
-      {!userLogged && (
-        <Fragment>
-          <Link to="/signin" title="Войти.">
-            <Button
-              buttonName="Войти"
-              isHeaderButton={true}
-              isVisible={true}
-              onClick={() => navigate('/signin')}
-            />
-          </Link>
-        </Fragment>
+      <Logo location={location} />
+      {isAuth && <UserAccount location={location} login={email} />}
+      {!isAuth && (
+        <Link to="/signin" title="Войти.">
+          <Button isHeaderButton isVisible onClick={() => navigate('/signin')}>
+            Войти
+          </Button>
+        </Link>
       )}
     </StyledHeader>
   )

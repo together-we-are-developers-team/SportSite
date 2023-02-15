@@ -1,9 +1,10 @@
+/* eslint-disable no-nested-ternary */
 import styled, { css } from 'styled-components'
-import cardYoga from '../../images/card-yoga.png'
-import cardStrench from '../../images/card-strench.png'
-import cardStep from '../../images/card-step.png'
-import cardDance from '../../images/card-dance.png'
-import cardBody from '../../images/card-body.png'
+import cardYoga from './images/card-yoga.png'
+import cardStrench from './images/card-strench.png'
+import cardStep from './images/card-step.png'
+import cardDance from './images/card-dance.png'
+import cardBody from './images/card-body.png'
 
 export const Card = styled.div`
   cursor: pointer;
@@ -14,13 +15,13 @@ export const Card = styled.div`
   border-radius: 30px;
   background-size: auto;
   background-image: url(${(props) =>
-    props.$IsBack === 'card-yoga'
+    props.$IsBack === 'card-Yoga'
       ? cardYoga
-      : props.$IsBack === 'card-strench'
+      : props.$IsBack === 'card-Strench'
       ? cardStrench
-      : props.$IsBack === 'card-step'
+      : props.$IsBack === 'card-Step'
       ? cardStep
-      : props.$IsBack === 'card-dance'
+      : props.$IsBack === 'card-Dance'
       ? cardDance
       : cardBody});
   background-position: center;

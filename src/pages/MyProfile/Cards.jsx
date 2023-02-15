@@ -1,17 +1,12 @@
+import { click } from '@testing-library/user-event/dist/click'
 import { React } from 'react'
 import * as S from './styles'
 
-
-const Cards = ({ titleCard, back }) => {
+function Cards({ titleCard, back, onClick }) {
   return (
-    <S.Card
-      $IsBack={back}
-      onClick={() => {
-        console.log('click')
-      }}
-    >
+    <S.Card $IsBack={back} onClick={onClick}>
       <S.CardTitle>{titleCard}</S.CardTitle>
-      <S.greenButton> {'Перейти →'}</S.greenButton>
+      <S.greenButton> Перейти →</S.greenButton>
     </S.Card>
   )
 }

@@ -1,29 +1,66 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { getAuth, updateEmail, updatePassword } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
 import * as S from './styles'
-import Logo from '../../components/Logo/Logo'
-import UserAccount from '../../components/UserAccount/UserAccount'
 import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
+// У тебя есть уже компонент <Card> не надо копировать и помещать к себе в страницу, см. src\components\Main\Main.jsx 25 строка, описал как лучше сделать
 import Cards from './Cards'
+import { useAuth } from '../../hooks/use-auth'
+import {
+  updateUserEmail,
+  updateUserPassword,
+} from '../../store/slices/userSlices'
 
-
-const MyProfile = () => {
+function MyProfile() {
+  const navigate = useNavigate()
   const [modalActive, setModalActive] = useState(false)
   const [modalLoginActive, setModalLoginActive] = useState(false)
+  /// /////////////////////////////////////////////////////////////////функции для правки логина/пароля//////////////////////////////////
+  const dispatch = useDispatch()
+  const auth = getAuth()
+  const { email, password, progress } = useAuth()
+  /* const newPassword = '87654321'
+const newEmail = '123@Mail.ru' */
+  const changeEmail = (newEmail) => {
+    setModalLoginActive(true)
+    updateEmail(auth.currentUser, newEmail)
+      .then(() => {
+        dispatch(
+          updateUserEmail({
+            email: newEmail,
+          })
+        )
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+  const changePassword = (newPassword) => {
+    setModalActive(true)
+    const user = auth.currentUser
+    updatePassword(user, newPassword)
+      .then(() => {
+        dispatch(
+          updateUserPassword({
+            password: newPassword,
+          })
+        )
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+  const day = 'd1'
 
   return (
     <S.Myprofile>
-      <S.MyprofileHeader>
-        <Logo $isBlackText={true} />
-        <UserAccount />
-      </S.MyprofileHeader>
-
-
       <S.MyprofileBlock>
         <h2>Мой профиль</h2>
 
-        <p>Логин: sergey.petrov96</p>
-        <p>Пароль: 4fkhdj880d</p>
+        <p>Логин: {email}</p>
+        <p>Пароль: {password}</p>
 
         <S.Buttons>
           <S.Button onClick={() => setModalLoginActive(true)}>
@@ -39,14 +76,26 @@ const MyProfile = () => {
       <h2>Мои курсы</h2>
 
       <S.MyprofileCards>
-        <Cards titleCard={'Йога'} back={'card-yoga'} />
-        <Cards titleCard={'Стретчинг'} back={'card-strench'} />
-        <Cards titleCard={'Бодифлекс'} back={'card-body'} />
+        {progress.courses.map((item) => (
+          <Cards
+            key={item.id}
+            titleCard={item.nameRu}
+            back="cart-yoga"
+            onClick={() => navigate(`/myprofile/courses/${item.id}${day}`)}
+          />
+        ))}
       </S.MyprofileCards>
 
-      <ModalPassword active={modalActive} setActive={setModalActive} />
-      <ModalLogin active={modalLoginActive} setActive={setModalLoginActive} />
-
+      <ModalPassword
+        active={modalActive}
+        setActive={setModalActive}
+        changePassword={changePassword}
+      />
+      <ModalLogin
+        active={modalLoginActive}
+        setActive={setModalLoginActive}
+        changeEmail={changeEmail}
+      />
     </S.Myprofile>
   )
 }

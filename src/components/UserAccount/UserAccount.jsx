@@ -1,10 +1,11 @@
 import React from 'react'
 import * as S from './styles'
 
-const UserAccount = () => {
+function UserAccount({ location, login }) {
+  // приходит логин login в виде текста заполняет текстовое поле
   return (
     <S.SideBar>
-      <S.SideBarName>Сергей</S.SideBarName>
+      <S.SideBarName location={location}>{login}</S.SideBarName>
     </S.SideBar>
   )
 }
