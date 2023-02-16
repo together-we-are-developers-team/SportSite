@@ -1,3 +1,5 @@
+/* eslint-disable no-sequences */
+/* eslint-disable no-unused-expressions */
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {}

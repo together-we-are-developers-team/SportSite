@@ -8,6 +8,7 @@ import backgroundTitleBlock from './img/back.png'
 import phoneImg from '../../assests/static/phone.png'
 import { useCourses } from '../../hooks/use-courses'
 import { useAuth } from '../../hooks/use-auth'
+import { getCourses } from '../../store/slices/coursesSlices'
 
 function AboutCourse() {
   const { id } = useParams()

@@ -7,7 +7,7 @@ import { useOnClickOutside } from '../../../hooks/useOnClickOutside'
 import Button from '../../Button/Button'
 import { setUser, getProgress } from '../../../store/slices/userSlices'
 
-const WorkoutProgressForm = ({ setVisible, exercisesPopup }) => {
+function WorkoutProgressForm({ setVisible, exercisesPopup }) {
   const formRef = useRef()
   const dispatch = useDispatch()
   // инпуты
@@ -19,7 +19,7 @@ const WorkoutProgressForm = ({ setVisible, exercisesPopup }) => {
   // функция отправки данных об изменении прогресса  и последующего забора изменных данных обратно в сторе
   function createUserProgress() {
     const db = getDatabase()
-  
+
     set(ref(db, `/progress/3yRjRDMK7SRZVtrLlB18LbeWuSJ2/workouts/yoga01/`), {
       target: 20,
       user: Number(value),
@@ -54,7 +54,7 @@ const WorkoutProgressForm = ({ setVisible, exercisesPopup }) => {
     <S.FormWrapper ref={formRef} onSubmit={onSubmit}>
       <h2>Мой прогресс</h2>
       <S.ProgressForm>
-      {exercisesPopup.map((item, i) => (
+        {exercisesPopup.map((item, i) => (
           <label>
             {item}
             <S.FormInput
@@ -65,7 +65,7 @@ const WorkoutProgressForm = ({ setVisible, exercisesPopup }) => {
             />
           </label>
         ))}
-       
+
         <Button buttonName="Отправить" type="submit" />
       </S.ProgressForm>
     </S.FormWrapper>
@@ -73,4 +73,3 @@ const WorkoutProgressForm = ({ setVisible, exercisesPopup }) => {
 }
 
 export default WorkoutProgressForm
-
