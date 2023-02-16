@@ -11,11 +11,15 @@ import { useAuth } from '../../hooks/use-auth'
 
 function Register() {
   const dispatch = useDispatch()
+
   const { values, handleChange, errors, isValid, resetForm } =
     useFormWithValidation()
+
   const [submitSuccessMSG, setSubmitSuccessMSG] = useState('')
   const navigate = useNavigate()
+
   const { isAuth, id, email } = useAuth()
+
   function createUserProgress() {
     const db = getDatabase()
 
@@ -71,6 +75,7 @@ function Register() {
 
   const onRegister = () => {
     const auth = getAuth()
+
     createUserWithEmailAndPassword(auth, values.login, values.password)
       .then(({ user }) => {
         dispatch(

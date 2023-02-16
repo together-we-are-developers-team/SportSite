@@ -3,7 +3,6 @@ import Logo from '../Logo/Logo'
 import * as S from './styles'
 
 function ChangePassword({ active, setActive, changePassword }) {
-  // приходит функция изменения пароля changePassword, в нее уходят данные с инпута при сабмите формы
   const [valuePassword, setValuePassword] = useState('')
 
   const onInputChangePassword = (evt) => {
@@ -46,6 +45,7 @@ function ChangePassword({ active, setActive, changePassword }) {
           />
           <S.FormSpan id="password-error" />
         </>
+
         <S.FormButton type="submit">Сохранить</S.FormButton>
       </S.AuthForm>
     </S.PopupArea>

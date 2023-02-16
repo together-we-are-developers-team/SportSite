@@ -6,9 +6,7 @@ export const mainButton = styled.button`
   cursor: pointer;
   background: ${({ transparent }) => (transparent ? 'transparent' : '#580ea2')};
   border-radius: 46px;
-  margin-left: 4px;
   border: ${({ transparent }) => (transparent ? '1px solid #d0cece' : 'none')};
-  margin-top: ${({ transparent }) => (transparent ? '20px' : '30px')};
   box-sizing: border-box;
   color: ${({ transparent }) => (transparent ? 'black' : 'white')};
   transition: 0.3s;
@@ -20,13 +18,11 @@ export const mainButton = styled.button`
   }
 `
 export const greenButton = styled.button`
-  margin-top: 34px;
   cursor: pointer;
   width: 147px;
   height: 48px;
   background: #c7e957;
   border-radius: 46px;
-  font-family: 'StratosSkyeng';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -48,7 +44,7 @@ export const greenButton = styled.button`
 
 export const headerButton = styled.button`
   display: ${({ visible }) => (!visible ? 'none' : 'block')};
-  padding: 5px 16px 7px;
+  padding: 5px 16px 5px;
   width: 77px;
   height: 36px;
   background: #140d40;
@@ -59,7 +55,6 @@ export const headerButton = styled.button`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  text-align: center;
   color: #ffffff;
   cursor: pointer;
   transition: 0.3s;

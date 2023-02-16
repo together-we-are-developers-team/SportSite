@@ -58,6 +58,7 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
     setSubmitSuccessMSG('')
     onLogin()
   }

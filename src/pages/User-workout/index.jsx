@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-expressions */
+
 import React, { useState, useEffect, ReactRouterDOM } from 'react'
 import ReactPlayer from 'react-player'
 import { useParams } from 'react-router-dom'
@@ -6,6 +7,7 @@ import * as S from './styles'
 import Exercises from '../../components/Exercises'
 import WorkoutProgress from '../../components/Workout-progress'
 // import playIconVideo from '../../assests/static/playIconVideo.png'
+
 import WorkoutProgressForm from '../../components/Workout-progress/form/WorkoutProgressForm'
 import { useCourses } from '../../hooks/use-courses'
 
@@ -14,12 +16,15 @@ function UserWorkout() {
 
   const [visible, setVisible] = useState(false)
   const { isCourses, courses } = useCourses()
+
   useEffect(() => {
     visible
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'scroll')
   }, [visible])
+
   console.log(params)
+
   const id = 'a01'
   const exercises = isCourses ? courses[4].workouts.yoga_d1.exercises : ''
   const exercisesPopup = courses[4].workouts.yoga_d1.exercises_popup

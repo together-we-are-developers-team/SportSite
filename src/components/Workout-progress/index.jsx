@@ -18,30 +18,7 @@ function WorkoutProgress({ id, exercisesProgress }) {
     'border-bar': '#565EEF',
     'bgc-bar': '#EDECFF',
   }))
-  /* const testData = [
-    {
-      id: 1,
-      workout: 'Наклон вперед',
-      progress: 50,
-      'border-bar': '#565EEF',
-      'bgc-bar': '#EDECFF',
-    },
-    {
-      id: 2,
-      workout: 'Наклон назад',
-      progress: 45,
-      'border-bar': '#FF6D00',
-      'bgc-bar': '#FFF2E0',
-    },
-    {
-      id: 3,
-      workout: 'Поднятие ног, согнутых в коленях',
-      progress: 45,
-      'border-bar': '#9A48F1',
-      'bgc-bar': '#F9EBFF',
-    },
-   
-  ] */
+
   const numberWorkOut = id.slice(-1)
   return (
     <S.ProgressWrapper>

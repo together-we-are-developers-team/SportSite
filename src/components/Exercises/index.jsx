@@ -4,13 +4,6 @@ import * as S from './styles'
 import Button from '../Button/Button'
 
 function Exercises({ visible, setVisible, exercises }) {
-  // приходит массив exercises
-  const testData = [
-    'Наклон вперед (10 повторений)',
-    'Наклон назад (10 повторений)',
-    'Поднятие ног, согнутых в коленях (5 повторений)',
-  ]
-
   return (
     <div>
       <h3>Упражнения</h3>

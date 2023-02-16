@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { getDatabase, ref, child, get } from 'firebase/database'
-import Button from '../../components/Button/Button'
 import * as S from './styles'
 import backgroundTitleBlock from './img/back.png'
 import phoneImg from '../../assests/static/phone.png'
@@ -51,28 +50,14 @@ function AboutCourse() {
     // НАзвание курса на русском, строка console.log(courses[id].nameRu)
   }, [])
   const { description, suitable, directions, nameRu } = courses[id]
-  const fitForYouDataTest = [
-    'Давно хотели попробовать йогу, но не решались начать.',
-    'Хотите укрепить позвоночник, избавиться от болей в спине и суставах.',
-    'Ищете активность, полезную для тела и души.',
-  ]
-
-  const directionsDataTest = [
-    'Йога для новичков',
-    'Классическая йога',
-    'Йогатерапия',
-    'Кундалини-йога',
-    'Хатха-йога',
-    'Аштанга-йога',
-  ]
 
   return (
     <S.Main>
       <S.TitleWrapper bg={backgroundTitleBlock}>
-        <h1>{nameRu}</h1>
+        <S.Title>{nameRu}</S.Title>
       </S.TitleWrapper>
       <section>
-        <h2>Подойдет для вас, если:</h2>
+        <S.FitTitle>Подойдет для вас, если:</S.FitTitle>
         <S.FitForYouWrapper>
           {suitable?.map((data, index) => (
             <S.FitForYouItem key={index + 1}>
@@ -83,7 +68,7 @@ function AboutCourse() {
         </S.FitForYouWrapper>
       </section>
       <section>
-        <h2>Направления:</h2>
+        <S.DirectionTitle>Направления:</S.DirectionTitle>
         <S.DirectionsList>
           {directions?.map((data, index) => (
             <S.DirectionItem key={index + 1}>{data}</S.DirectionItem>
@@ -91,7 +76,7 @@ function AboutCourse() {
         </S.DirectionsList>
       </section>
 
-      {description}
+      <S.WorkoutDescription> {description}</S.WorkoutDescription>
 
       <S.TrialWorkoutBlock>
         <div>
@@ -100,9 +85,9 @@ function AboutCourse() {
             выбором направления и тренера, с которым тренировки принесут
             здоровье и радость!
           </S.TrialWorkoutDescription>
-          <Button buttonName="Записаться на тренировку" />
+          <S.TrialButton>Записаться на тренировку</S.TrialButton>
         </div>
-        <img src={phoneImg} alt="phone" />
+        <S.TrialPhoneImg src={phoneImg} alt="phone" />
       </S.TrialWorkoutBlock>
     </S.Main>
   )

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getAuth, updateEmail, updatePassword } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import * as S from './styles'
 import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
-// У тебя есть уже компонент <Card> не надо копировать и помещать к себе в страницу, см. src\components\Main\Main.jsx 25 строка, описал как лучше сделать
-import Cards from './Cards'
+
+import Card from '../../components/Card/Card'
 import { useAuth } from '../../hooks/use-auth'
 import {
   updateUserEmail,
@@ -14,7 +14,6 @@ import {
 } from '../../store/slices/userSlices'
 
 function MyProfile() {
-  const navigate = useNavigate()
   const [modalActive, setModalActive] = useState(false)
   const [modalLoginActive, setModalLoginActive] = useState(false)
   /// /////////////////////////////////////////////////////////////////функции для правки логина/пароля//////////////////////////////////
@@ -55,14 +54,14 @@ const newEmail = '123@Mail.ru' */
   const day = 'd1'
 
   return (
-    <S.Myprofile>
-      <S.MyprofileBlock>
-        <h2>Мой профиль</h2>
+    <S.MyprofileBlock>
+      <S.MyprofileUserInfo>
+        <S.Title>Мой профиль</S.Title>
 
-        <p>Логин: {email}</p>
-        <p>Пароль: {password}</p>
+        <S.Paragraph>Логин: {email}</S.Paragraph>
+        <S.Paragraph>Пароль: {password}</S.Paragraph>
 
-        <S.Buttons>
+        <S.MyprofileUserChangeButtons>
           <S.Button onClick={() => setModalLoginActive(true)}>
             Редактировать логин
           </S.Button>
@@ -70,19 +69,16 @@ const newEmail = '123@Mail.ru' */
           <S.Button onClick={() => setModalActive(true)}>
             Редактировать пароль
           </S.Button>
-        </S.Buttons>
-      </S.MyprofileBlock>
+        </S.MyprofileUserChangeButtons>
+      </S.MyprofileUserInfo>
 
       <h2>Мои курсы</h2>
 
       <S.MyprofileCards>
         {progress.courses.map((item) => (
-          <Cards
-            key={item.id}
-            titleCard={item.nameRu}
-            back="cart-yoga"
-            onClick={() => navigate(`/myprofile/courses/${item.id}${day}`)}
-          />
+          <Link to={`/myprofile/courses/${item.id}${day}`}>
+            <Card key={item.id} titleCard={item.nameRu} back="cart-yoga" />
+          </Link>
         ))}
       </S.MyprofileCards>
 
@@ -96,7 +92,7 @@ const newEmail = '123@Mail.ru' */
         setActive={setModalLoginActive}
         changeEmail={changeEmail}
       />
-    </S.Myprofile>
+    </S.MyprofileBlock>
   )
 }
 

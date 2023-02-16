@@ -1,9 +1,9 @@
 import { React } from 'react'
 import * as S from './styles'
 
-function Card({ titleCard, back, onClick }) {
+function Card({ titleCard, cardImage }) {
   return (
-    <S.Card $IsBack={back} onClick={onClick}>
+    <S.Card cardImage={cardImage} onClick={() => {}}>
       <S.CardTitle>{titleCard}</S.CardTitle>
     </S.Card>
   )

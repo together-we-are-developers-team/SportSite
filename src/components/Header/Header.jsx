@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import { StyledHeader } from './styles'
 import UserAccount from '../UserAccount/UserAccount'
@@ -14,12 +14,20 @@ function Header({ location }) {
   return (
     <StyledHeader>
       <Logo location={location} />
-      {isAuth && <UserAccount location={location} login={email} />}
+      {isAuth && (
+        // Пока просто сделал линк на админку
+        <Link to="/myprofile">
+          <UserAccount location={location} login={email} />
+        </Link>
+      )}
       {!isAuth && (
         <Link to="/signin" title="Войти.">
-          <Button isHeaderButton isVisible onClick={() => navigate('/signin')}>
-            Войти
-          </Button>
+          <Button
+            isHeaderButton
+            isVisible
+            buttonName="Войти"
+            onClick={() => navigate('/signin')}
+          />
         </Link>
       )}
     </StyledHeader>
