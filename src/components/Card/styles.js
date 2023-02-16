@@ -1,4 +1,5 @@
 /* eslint-disable no-nested-ternary */
+
 import styled from 'styled-components'
 
 export const Card = styled.div`

@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import * as S from './styles'
 import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
-
 import Card from '../../components/Card/Card'
 import { useAuth } from '../../hooks/use-auth'
 import {
@@ -72,7 +71,7 @@ const newEmail = '123@Mail.ru' */
         </S.MyprofileUserChangeButtons>
       </S.MyprofileUserInfo>
 
-      <h2>Мои курсы</h2>
+      <S.Subtitle>Мои курсы</S.Subtitle>
 
       <S.MyprofileCards>
         {progress.courses.map((item) => (
@@ -81,7 +80,6 @@ const newEmail = '123@Mail.ru' */
           </Link>
         ))}
       </S.MyprofileCards>
-
       <ModalPassword
         active={modalActive}
         setActive={setModalActive}

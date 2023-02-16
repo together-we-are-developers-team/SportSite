@@ -9,6 +9,7 @@ import WorkoutProgress from '../../components/Workout-progress'
 // import playIconVideo from '../../assests/static/playIconVideo.png'
 
 import WorkoutProgressForm from '../../components/Workout-progress/form/WorkoutProgressForm'
+
 import { useCourses } from '../../hooks/use-courses'
 
 function UserWorkout() {
@@ -22,8 +23,6 @@ function UserWorkout() {
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'scroll')
   }, [visible])
-
-  console.log(params)
 
   const id = 'a01'
   const exercises = isCourses ? courses[4].workouts.yoga_d1.exercises : ''

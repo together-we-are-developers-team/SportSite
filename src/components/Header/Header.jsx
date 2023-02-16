@@ -15,7 +15,7 @@ function Header({ location }) {
     <StyledHeader>
       <Logo location={location} />
       {isAuth && (
-        // Пока просто сделал линк на админку
+        // Просто сделал линк на админку
         <Link to="/myprofile">
           <UserAccount location={location} login={email} />
         </Link>

@@ -6,14 +6,12 @@ import { useDispatch } from 'react-redux'
 import AuthForm from '../../components/AuthForm/AuthForm'
 import { StyledLogin } from './styles'
 import useFormWithValidation from '../../utils/useFormWithValidation'
-import { useAuth } from '../../hooks/use-auth'
 import { setUser, getProgress } from '../../store/slices/userSlices'
 
 function Login() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [submitSuccessMSG, setSubmitSuccessMSG] = useState('')
-
   const { values, handleChange, errors, isValid, resetForm } =
     useFormWithValidation()
 
@@ -54,7 +52,7 @@ function Login() {
         resetForm()
       })
       .catch(() => setSubmitSuccessMSG('Такого пользователя не существует'))
-  }
+    }
 
   const handleSubmit = (event) => {
     event.preventDefault()

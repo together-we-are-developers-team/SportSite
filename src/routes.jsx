@@ -14,23 +14,24 @@ export function AppRoutes({ isLoading }) {
   const { isAuth } = useAuth()
 
   return (
-    <Routes>
-      <Route path="/" element={<MainPage isLoading={isLoading} />} />
-      <Route path="/courses/:id" element={<AboutCourse />} />
-
-      <Route element={<ProtectedRoute isAllowed={isAuth} />}>
-        <Route
-          path="/myprofile"
-          element={<MyProfile isLoading={isLoading} />}
-        />
-
-        <Route path="/myprofile/courses/:id" element={<UserWorkout />} />
-      </Route>
-
-      <Route path="/signup" element={<Register />} />
-      <Route path="/signin" element={<Login />} />
-
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    
+      <Routes>
+        <Route path="/" element={<MainPage isLoading={isLoading} />} />
+        <Route path="/courses/:id" element={<AboutCourse />} />
+  
+        <Route element={<ProtectedRoute isAllowed={isAuth} />}>
+          <Route
+            path="/myprofile"
+            element={<MyProfile isLoading={isLoading} />}
+          />
+          <Route path="/myprofile/courses/:id" element={<UserWorkout />} />
+        </Route>
+  
+        <Route path="/signup" element={<Register />} />
+        <Route path="/signin" element={<Login />} />
+  
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    
   )
 }

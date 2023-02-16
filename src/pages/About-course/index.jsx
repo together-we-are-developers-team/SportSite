@@ -6,9 +6,8 @@ import { getDatabase, ref, child, get } from 'firebase/database'
 import * as S from './styles'
 import backgroundTitleBlock from './img/back.png'
 import phoneImg from '../../assests/static/phone.png'
-import { useAuth } from '../../hooks/use-auth'
 import { useCourses } from '../../hooks/use-courses'
-import { getCourses } from '../../store/slices/coursesSlices'
+import { useAuth } from '../../hooks/use-auth'
 
 function AboutCourse() {
   const { id } = useParams()
@@ -76,7 +75,7 @@ function AboutCourse() {
         </S.DirectionsList>
       </section>
 
-      <S.WorkoutDescription> {description}</S.WorkoutDescription>
+      <S.WorkoutDescription>{description}</S.WorkoutDescription>
 
       <S.TrialWorkoutBlock>
         <div>
