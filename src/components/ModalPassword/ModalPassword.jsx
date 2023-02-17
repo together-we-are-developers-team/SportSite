@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react'
 import Logo from '../Logo/Logo'
 import * as S from './styles'
 
-function ChangePassword({ active, setActive }) {
+function ChangePassword({ active, setActive, changePassword }) {
   const [valuePassword, setValuePassword] = useState('')
 
   const onInputChangePassword = (evt) => {
@@ -10,6 +10,7 @@ function ChangePassword({ active, setActive }) {
   }
   const onSubmit = (event) => {
     event.preventDefault()
+    changePassword(valuePassword)
   }
 
   if (!active) {
@@ -44,7 +45,8 @@ function ChangePassword({ active, setActive }) {
           />
           <S.FormSpan id="password-error" />
         </>
-        <S.FormButton onClick={onInputChangePassword}>Сохранить</S.FormButton>
+
+        <S.FormButton type="submit">Сохранить</S.FormButton>
       </S.AuthForm>
     </S.PopupArea>
   )

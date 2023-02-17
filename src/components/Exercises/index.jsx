@@ -3,18 +3,12 @@ import React from 'react'
 import * as S from './styles'
 import Button from '../Button/Button'
 
-function Exercises({ visible, setVisible }) {
-  const testData = [
-    'Наклон вперед (10 повторений)',
-    'Наклон назад (10 повторений)',
-    'Поднятие ног, согнутых в коленях (5 повторений)',
-  ]
-
+function Exercises({ visible, setVisible, exercises }) {
   return (
     <div>
       <h3>Упражнения</h3>
       <S.ExercisesList>
-        {testData?.map((data, index) => (
+        {exercises?.map((data, index) => (
           <li key={index}>{data}</li>
         ))}
       </S.ExercisesList>

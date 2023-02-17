@@ -57,12 +57,12 @@ export const Title = styled.h2`
 `
 
 export const Subtitle = styled.h3`
-font-style: normal;
-font-weight: 400;
-font-size: 48px;
-line-height: 56px;
-margin-bottom: 60px;
-margin-top: 61px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 60px;
+  margin-top: 61px;
 `
 
 export const Paragraph = styled.p`
@@ -78,7 +78,6 @@ export const ForwardCardGreenBtn = styled(greenButton)`
   position: absolute;
   left: 30px;
   bottom: 27px;
-
 `
 
 export const MyProfileCardsBlock = styled.div`

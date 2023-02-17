@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
-import styled, { css } from 'styled-components'
 
+import styled from 'styled-components'
 
 export const Card = styled.div`
   cursor: pointer;
@@ -10,8 +10,8 @@ export const Card = styled.div`
   backdrop-filter: blur(14.5187px);
   border-radius: 30px;
   background-size: auto;
-  background-image: url(${({cardImage}) =>
-    cardImage });
+  padding: 30px;
+  background-image: url(${({ cardImage }) => cardImage});
   background-position: center;
   box-shadow: 10px -10px 16px rgba(0, 0, 0, 0.1),
     -10px 10px 15.9988px rgba(0, 0, 0, 0.1);
@@ -24,9 +24,6 @@ export const CardTitle = styled.h3`
   font-style: normal;
   font-weight: 800;
   font-size: 36px;
-  width: 290px;
-  height: 120px;
-  margin: 30px 0 0 30px;
   line-height: 110%;
   letter-spacing: -0.5px;
   font-feature-settings: 'pnum' on, 'lnum' on;
