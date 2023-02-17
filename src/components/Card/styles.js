@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import styled, { css } from 'styled-components'
+import { greenButton } from '../Button/styles'
 
 
 export const Card = styled.div`
@@ -31,4 +32,10 @@ export const CardTitle = styled.h3`
   letter-spacing: -0.5px;
   font-feature-settings: 'pnum' on, 'lnum' on;
   color: #000000;
+`
+export const ForwardCardGreenBtn = styled(greenButton)`
+  position: absolute;
+  left: 30px;
+  bottom: 27px;
+
 `

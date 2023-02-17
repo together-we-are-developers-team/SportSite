@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { greenButton } from '../../components/Button/styles'
 
 export const MyprofileBlock = styled.section`
   display: flex;
@@ -57,12 +56,12 @@ export const Title = styled.h2`
 `
 
 export const Subtitle = styled.h3`
-font-style: normal;
-font-weight: 400;
-font-size: 48px;
-line-height: 56px;
-margin-bottom: 60px;
-margin-top: 61px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 60px;
+  margin-top: 61px;
 `
 
 export const Paragraph = styled.p`
@@ -74,21 +73,9 @@ export const Paragraph = styled.p`
   margin-bottom: 20px;
 `
 
-export const ForwardCardGreenBtn = styled(greenButton)`
-  position: absolute;
-  left: 30px;
-  bottom: 27px;
-
-`
-
-export const MyProfileCardsBlock = styled.div`
+export const MyprofileCardsBlock = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 40px;
-`
-
-export const MyprofileCards = styled.section`
-  display: flex;
-  flex-direction: row;
-  position: relative;
 `
