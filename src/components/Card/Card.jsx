@@ -1,7 +1,7 @@
 import { React } from 'react'
 import * as S from './styles'
 
-function Card({ titleCard, cardImage, isForwardBtn = false, onSelectWorkout }) {
+function Card({ titleCard, cardImage, isForwardBtn, onSelectWorkout }) {
   return (
     <S.Card cardImage={cardImage} onClick={onSelectWorkout}>
       <S.CardTitle>{titleCard}</S.CardTitle>
