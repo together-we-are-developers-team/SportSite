@@ -30,7 +30,7 @@ function Login() {
         )
         const dbRef = ref(getDatabase())
 
-        get(child(dbRef, `progress/3yRjRDMK7SRZVtrLlB18LbeWuSJ2/`))
+        get(child(dbRef, `progress/${user.uid}/`))
           .then((snapshot) => {
             if (snapshot.exists()) {
               const data = snapshot.val()
@@ -56,7 +56,6 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-
     setSubmitSuccessMSG('')
     onLogin()
   }

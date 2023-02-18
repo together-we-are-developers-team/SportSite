@@ -19,6 +19,7 @@ function MyProfile() {
   const dispatch = useDispatch()
   const auth = getAuth()
   const { email, password, progress } = useAuth()
+ 
   /* const newPassword = '87654321'
 const newEmail = '123@Mail.ru' */
   const changeEmail = (newEmail) => {
