@@ -15,6 +15,44 @@ function MyProfile() {
   const [modalLoginActive, setModalLoginActive] = useState(false)
   const [modalTrainingActive, setModalTrainingActive] = useState(false)
 
+  /// /////////////////////////////////////////////////////////////////функции для правки логина/пароля//////////////////////////////////
+  const dispatch = useDispatch()
+  const auth = getAuth()
+  const { email, password, progress } = useAuth()
+ 
+  /* const newPassword = '87654321'
+const newEmail = '123@Mail.ru' */
+  const changeEmail = (newEmail) => {
+    setModalLoginActive(true)
+    updateEmail(auth.currentUser, newEmail)
+      .then(() => {
+        dispatch(
+          updateUserEmail({
+            email: newEmail,
+          })
+        )
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+  const changePassword = (newPassword) => {
+    setModalActive(true)
+    const user = auth.currentUser
+    updatePassword(user, newPassword)
+      .then(() => {
+        dispatch(
+          updateUserPassword({
+            password: newPassword,
+          })
+        )
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+
+ 
+
   const cardMockData = [
     {
       id: 1,
