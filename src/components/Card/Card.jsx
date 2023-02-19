@@ -1,9 +1,9 @@
 import { React } from 'react'
 import * as S from './styles'
 
-function Card({ titleCard, cardImage, isForwardBtn, onSelectWorkout }) {
+function Card({ titleCard, cardImage, isForwardBtn, onClick }) {
   return (
-    <S.Card cardImage={cardImage} onClick={onSelectWorkout}>
+    <S.Card cardImage={cardImage} onClick={onClick}>
       <S.CardTitle>{titleCard}</S.CardTitle>
 
       {isForwardBtn && <S.ForwardCardGreenBtn>Перейти →</S.ForwardCardGreenBtn>}

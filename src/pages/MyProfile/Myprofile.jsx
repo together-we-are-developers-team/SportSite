@@ -12,16 +12,14 @@ import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
 import ModalTraining from '../../components/SelectWorkout/SelectWorkout'
 import Card from '../../components/Card/Card'
-import cardDance from '../../components/Card/images/card-dance.png'
-import cardStretch from '../../components/Card/images/card-strench.png'
-import cardYoga from '../../components/Card/images/card-yoga.png'
-// import cardStep from '../../components/Card/images/card-step.png'
-// import cardBody from '../../components/Card/images/card-body.png'
+
 
 function MyProfile() {
   const [modalActive, setModalActive] = useState(false)
   const [modalLoginActive, setModalLoginActive] = useState(false)
   const [modalTrainingActive, setModalTrainingActive] = useState(false)
+
+  const [currentCourseForCard, setCurrentCourseForCard] = useState('yoga')
 
   /// /////////////////////функции для правки логина/пароля//////////////////////////////////
   const dispatch = useDispatch()
@@ -61,24 +59,6 @@ const newEmail = '123@Mail.ru' */
   }
   const day = 'd1'
 
-  const cardMockData = [
-    {
-      id: 1,
-      title: 'Йога',
-      image: cardYoga,
-    },
-    {
-      id: 2,
-      title: 'Стретчинг',
-      image: cardStretch,
-    },
-    {
-      id: 3,
-      title: 'Танцевальный фитнес',
-      image: cardDance,
-    },
-  ]
-
   const onSelectWorkout = () => {
     setModalTrainingActive(true)
   }
@@ -105,28 +85,27 @@ const newEmail = '123@Mail.ru' */
       <S.Subtitle>Мои курсы</S.Subtitle>
 
       <S.MyProfileCardsBlock>
-        {cardMockData?.map((element) => (
+
+         {progress.courses?.map((element) => (
           <Card
-            titleCard={element.title}
-            cardImage={element.image}
             key={element.id}
+            titleCard={element.nameRu}
+            cardImage={element.image}
             isForwardBtn
-            onSelectWorkout={onSelectWorkout}
+            onClick={() => {
+              setCurrentCourseForCard(element.id)
+              setModalTrainingActive(true)
+            }}
           />
         ))}
-        {/* {progress.courses.map((item) => (
-          <Link to={`/myprofile/courses/${item.id}${day}`}>
-            <Card key={item.id} titleCard={item.nameRu} back="cart-yoga" />
-          </Link>
-        ))} */}
       </S.MyProfileCardsBlock>
 
       <ModalTraining
         active={modalTrainingActive}
         setActive={setModalTrainingActive}
       />
-      <ModalPassword active={modalActive} setActive={setModalActive} />
-      <ModalLogin active={modalLoginActive} setActive={setModalLoginActive} />
+      <ModalPassword active={modalActive} setActive={setModalActive} changePassword={changePassword}/>
+      <ModalLogin active={modalLoginActive} setActive={setModalLoginActive} changeEmail={changeEmail}/>
     </S.MyprofileBlock>
   )
 }
