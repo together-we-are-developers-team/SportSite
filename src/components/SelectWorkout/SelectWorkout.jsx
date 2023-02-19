@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import * as S from './styles'
 import TrainingBtn from './TrainingBtn'
 
-function SelectWorkout({ active, setActive }) {
+function SelectWorkout({ active, setActive, course }) {
   const onSubmit = (event) => {
     event.preventDefault()
   }
@@ -44,11 +45,16 @@ function SelectWorkout({ active, setActive }) {
         <S.Title>Выберите тренировку</S.Title>
 
         {trainings.map((training) => (
-          <TrainingBtn
+          <Link
             key={training.id}
-            title={training.title}
-            subTitle={training.subTitle}
-          />
+            to={`/myprofile/courses/${course}_d${training.id}`}
+          >
+            <TrainingBtn
+              key={training.id}
+              title={training.title}
+              subTitle={training.subTitle}
+            />
+          </Link>
         ))}
       </S.PopupAreaMenu>
     </S.PopAreaForTrainings>

@@ -2,22 +2,30 @@ import React from 'react'
 import * as S from './styles'
 import { useAuth } from '../../hooks/use-auth'
 
-function WorkoutProgress({ id, exercisesProgress }) {
+function WorkoutProgress({ id, exercisesProgress, workouts }) {
   const { progress } = useAuth()
-  const currentWorkout = progress.workouts.yoga01
+
   /* конкретное занятие, обьект вида {
     "target": 20,
     "user": 10
 } для вычисления прогресса в процентах и заполнения шкалы */
 
   // приходит массив с заголовками для окна прогресса с ползунками exercisesProgress
-  const testData = exercisesProgress.map((item, i) => ({
-    id: i,
-    workout: item,
-    progress: (currentWorkout.user * 100) / currentWorkout.target,
-    'border-bar': '#565EEF',
-    'bgc-bar': '#EDECFF',
-  }))
+  const testData = exercisesProgress.map((item, i) => {
+    const wor = workouts[i].id.split('_')[2]
+    const day = workouts[i].id.split('_')[1]
+    const course = workouts[i].id.split('_')[0]
+
+    const currentWorkout = progress.workouts[course][day][wor]
+
+    return {
+      id: i,
+      workout: item,
+      progress: (currentWorkout.user * 100) / currentWorkout.target,
+      'border-bar': '#565EEF',
+      'bgc-bar': '#EDECFF',
+    }
+  })
 
   const numberWorkOut = id.slice(-1)
   return (

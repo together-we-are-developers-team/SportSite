@@ -52,7 +52,7 @@ function Login() {
         resetForm()
       })
       .catch(() => setSubmitSuccessMSG('Такого пользователя не существует'))
-    }
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault()

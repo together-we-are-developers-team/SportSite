@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import * as S from './styles'
 
-function TrainingBtn ({ title, subTitle }) {
+function TrainingBtn({ title, subTitle }) {
   const [active, setActive] = useState(false)
 
   return (
