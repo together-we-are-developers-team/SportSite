@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getAuth, updateEmail, updatePassword } from 'firebase/auth'
-import { click } from '@testing-library/user-event/dist/click'
 import * as S from './styles'
 import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
@@ -22,11 +21,14 @@ function MyProfile() {
   const [modalActive, setModalActive] = useState(false)
   const [modalLoginActive, setModalLoginActive] = useState(false)
   const [modalTrainingActive, setModalTrainingActive] = useState(false)
+
   const [currentCourseForCard, setCurrentCourseForCard] = useState('yoga')
   /// /////////////////////////////////////////////////////////////////функции для правки логина/пароля//////////////////////////////////
+
   const dispatch = useDispatch()
   const auth = getAuth()
   const { email, password, progress } = useAuth()
+
 
   const changeEmail = (newEmail) => {
     setModalLoginActive(true)
@@ -56,14 +58,16 @@ function MyProfile() {
       .catch((error) => {
         console.error(error)
       })
-  }
+
 
   return (
     <S.MyprofileBlock>
       <S.MyprofileUserInfo>
         <S.Title>Мой профиль</S.Title>
+
         <S.Paragraph>Логин: {email}</S.Paragraph>
         <S.Paragraph>Пароль: {password}</S.Paragraph>
+
 
         <S.MyprofileUserChangeButtons>
           <S.Button onClick={() => setModalLoginActive(true)}>
@@ -79,7 +83,7 @@ function MyProfile() {
       <S.Subtitle>Мои курсы</S.Subtitle>
 
       <S.MyProfileCardsBlock>
-        {progress.courses?.map((element) => (
+         {progress.courses?.map((element) => (
           <Card
             key={element.id}
             titleCard={element.nameRu}
@@ -108,6 +112,10 @@ function MyProfile() {
         setActive={setModalLoginActive}
         changeEmail={changeEmail}
       />
+
+      <ModalPassword active={modalActive} setActive={setModalActive} changePassword={changePassword}/>
+      <ModalLogin active={modalLoginActive} setActive={setModalLoginActive} changeEmail={changeEmail}/>
+
     </S.MyprofileBlock>
   )
 }
