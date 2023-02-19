@@ -5,4 +5,5 @@ export const StyledNotFound = styled.div`
   justify-content: center;
   color: white;
   padding: 50vh;
+  background: #271A58;
 `
