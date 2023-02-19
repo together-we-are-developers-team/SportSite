@@ -32,11 +32,9 @@ export const Button = styled.button`
   margin-bottom: 14px;
   box-sizing: border-box;
   color: #ffffff;
-
   &:hover {
     background: #3f007d;
   }
-
   :active {
     background: #271a58;
   }

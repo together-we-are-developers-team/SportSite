@@ -32,8 +32,6 @@ function Main() {
               courses: data,
             })
           )
-        } else {
-          console.log('No data available')
         }
       })
       .catch((error) => {
