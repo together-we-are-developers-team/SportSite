@@ -1,33 +1,30 @@
 import React from 'react'
 import * as S from './styles'
+import { useAuth } from '../../hooks/use-auth'
 
-function WorkoutProgress() {
-  const testData = [
-    {
-      id: 1,
-      workout: 'Наклон вперед',
-      progress: 45,
-      'border-bar': '#565EEF',
-      'bgc-bar': '#EDECFF',
-    },
-    {
-      id: 2,
-      workout: 'Наклон назад',
-      progress: 45,
-      'border-bar': '#FF6D00',
-      'bgc-bar': '#FFF2E0',
-    },
-    {
-      id: 3,
-      workout: 'Поднятие ног, согнутых в коленях',
-      progress: 45,
-      'border-bar': '#9A48F1',
-      'bgc-bar': '#F9EBFF',
-    },
-  ]
+function WorkoutProgress({ id, exercisesProgress }) {
+  const { progress } = useAuth()
+  const currentWorkout = progress.workouts.yoga01
+  /* конкретное занятие, обьект вида {
+    "target": 20,
+    "user": 10
+} для вычисления прогресса в процентах и заполнения шкалы */
+
+  // приходит массив с заголовками для окна прогресса с ползунками exercisesProgress
+  const testData = exercisesProgress.map((item, i) => ({
+    id: i,
+    workout: item,
+    progress: (currentWorkout.user * 100) / currentWorkout.target,
+    'border-bar': '#565EEF',
+    'bgc-bar': '#EDECFF',
+  }))
+
+  const numberWorkOut = id.slice(-1)
   return (
     <S.ProgressWrapper>
-      <S.ProgressTitle>Мой прогресс по тренировке 2:</S.ProgressTitle>
+      <S.ProgressTitle>
+        Мой прогресс по тренировке {numberWorkOut}:
+      </S.ProgressTitle>
       <S.ProgressList>
         {testData?.map((data) => (
           <S.ProgressListItem key={data.id}>

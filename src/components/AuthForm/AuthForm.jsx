@@ -10,7 +10,7 @@ function AuthForm({
   onChange,
   errors,
   isValid,
-  mathPasswordsError,
+  submitSuccessMSG,
 }) {
   const navigate = useNavigate()
   const { pathname } = useLocation()
@@ -55,7 +55,7 @@ function AuthForm({
         )}
 
         <S.FormSpanSubmit $isValid={isValid}>
-          {mathPasswordsError}
+          {submitSuccessMSG}
         </S.FormSpanSubmit>
         <S.FormButton type="submit" disabled={!isValid}>
           {pathname === '/signin' ? 'Войти' : 'Зарегистрироваться'}

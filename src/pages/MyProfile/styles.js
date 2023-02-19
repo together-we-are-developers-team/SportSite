@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { greenButton } from '../../components/Button/styles'
 
 export const MyprofileBlock = styled.section`
   display: flex;
@@ -31,11 +32,9 @@ export const Button = styled.button`
   margin-bottom: 14px;
   box-sizing: border-box;
   color: #ffffff;
-
   &:hover {
     background: #3f007d;
   }
-
   :active {
     background: #271a58;
   }
@@ -73,9 +72,20 @@ export const Paragraph = styled.p`
   margin-bottom: 20px;
 `
 
-export const MyprofileCardsBlock = styled.div`
+export const ForwardCardGreenBtn = styled(greenButton)`
+  position: absolute;
+  left: 30px;
+  bottom: 27px;
+`
+
+export const MyProfileCardsBlock = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 40px;
+`
+
+export const MyprofileCards = styled.section`
+  display: flex;
+  flex-direction: row;
+  position: relative;
 `

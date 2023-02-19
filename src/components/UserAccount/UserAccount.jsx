@@ -1,10 +1,10 @@
 import React from 'react'
 import * as S from './styles'
 
-function UserAccount({ location }) {
+function UserAccount({ location, login }) {
   return (
     <S.SideBar>
-      <S.SideBarName location={location}>Сергей</S.SideBarName>
+      <S.SideBarName location={location}>{login}</S.SideBarName>
     </S.SideBar>
   )
 }

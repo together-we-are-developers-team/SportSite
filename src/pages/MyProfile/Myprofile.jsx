@@ -30,7 +30,7 @@ function MyProfile() {
       id: 3,
       title: 'Танцевальный фитнес',
       image: cardDance,
-    }
+    },
   ]
 
   const onSelectWorkout = () => {
@@ -57,7 +57,7 @@ function MyProfile() {
 
       <S.Subtitle>Мои курсы</S.Subtitle>
 
-      <S.MyprofileCardsBlock>
+      <S.MyProfileCardsBlock>
         {cardMockData?.map((element) => (
           <Card
             titleCard={element.title}
@@ -67,7 +67,7 @@ function MyProfile() {
             onSelectWorkout={onSelectWorkout}
           />
         ))}
-      </S.MyprofileCardsBlock>
+      </S.MyProfileCardsBlock>
 
       <ModalTraining
         active={modalTrainingActive}
