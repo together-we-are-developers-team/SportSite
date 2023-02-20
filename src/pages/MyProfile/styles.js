@@ -82,10 +82,12 @@ export const MyProfileCardsBlock = styled.div`
   display: flex;
   flex-direction: row;
   gap: 40px;
+  flex-wrap: wrap;
 `
 
 export const MyprofileCards = styled.section`
   display: flex;
+
   flex-direction: row;
   position: relative;
 `

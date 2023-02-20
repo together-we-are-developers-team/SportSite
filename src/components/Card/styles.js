@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 import { greenButton } from '../Button/styles'
 
-
 export const Card = styled.div`
   cursor: pointer;
   width: 360px;
@@ -33,5 +32,4 @@ export const ForwardCardGreenBtn = styled(greenButton)`
   position: absolute;
   left: 30px;
   bottom: 27px;
-
 `

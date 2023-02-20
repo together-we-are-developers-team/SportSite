@@ -18,9 +18,6 @@ function Register() {
     useFormWithValidation()
   const [submitSuccessMSG, setSubmitSuccessMSG] = useState('')
 
-
-
-
   function createUserProgress(user) {
     const db = getDatabase()
 
@@ -46,7 +43,6 @@ function Register() {
       })
       .catch(setSubmitSuccessMSG('Такой пользователь уже существует'))
   }
-
 
   const handleSubmit = (event) => {
     event.preventDefault()
