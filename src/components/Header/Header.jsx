@@ -5,6 +5,7 @@ import { StyledHeader } from './styles'
 import UserAccount from '../UserAccount/UserAccount'
 import Button from '../Button/Button'
 import { useAuth } from '../../hooks/use-auth'
+
 // для разлогинивания функция и импорт //import{removeUser} from '../../store/slices/userSlices' onClick={()=>dispatch(removeUser())}
 
 function Header({ location }) {
