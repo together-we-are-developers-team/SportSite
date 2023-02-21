@@ -58,7 +58,7 @@ function Main() {
         <S.MainCards>
           {isCourses
             ? courses.map((item, i) => (
-                <Link to={`/courses/${i}`}>
+                <Link key={item.id} to={`/courses/${i}`}>
                   <Card
                     key={item.id}
                     titleCard={item.nameRu}

@@ -5,28 +5,41 @@ import { useDispatch } from 'react-redux'
 import * as S from './styles'
 import { useOnClickOutside } from '../../../hooks/useOnClickOutside'
 import Button from '../../Button/Button'
-import { setUser, getProgress } from '../../../store/slices/userSlices'
+import { getProgress } from '../../../store/slices/userSlices'
+import { useAuth } from '../../../hooks/use-auth'
 
-function WorkoutProgressForm({ setVisible, exercisesPopup }) {
+function WorkoutProgressForm({ setVisible, exercisesPopup, workouts }) {
   const formRef = useRef()
   const dispatch = useDispatch()
+  const { id } = useAuth()
   // инпуты
-  const [value, setValue] = useState('')
-  const [yoga03, setYoga03] = useState('')
-  const [yoga04, setYoga04] = useState('')
+  const [values, setValues] = useState('')
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setValues({
+      ...values,
+      [name]: value,
+    })
+  }
 
   useOnClickOutside(formRef, () => setVisible(false))
   // функция отправки данных об изменении прогресса  и последующего забора изменных данных обратно в сторе
-  function createUserProgress() {
+  function createUserProgress(wor, value) {
+    const workout = wor.split('_')[2]
+    const dayOfProgress = wor.split('_')[1]
     const db = getDatabase()
+    set(
+      ref(
+        db,
+        `/progress/${id}/workouts/yoga/${dayOfProgress}/${workout}/user/`
+      ),
 
-    set(ref(db, `/progress/3yRjRDMK7SRZVtrLlB18LbeWuSJ2/workouts/yoga01/`), {
-      target: 20,
-      user: Number(value),
-    })
+      Number(value)
+    )
     const dbRef = ref(getDatabase())
 
-    get(child(dbRef, `progress/3yRjRDMK7SRZVtrLlB18LbeWuSJ2/`))
+    get(child(dbRef, `progress/${id}/`))
       .then((snapshot) => {
         if (snapshot.exists()) {
           const data = snapshot.val()
@@ -47,7 +60,11 @@ function WorkoutProgressForm({ setVisible, exercisesPopup }) {
 
   const onSubmit = (event) => {
     event.preventDefault()
-    createUserProgress()
+    for (const key in values) {
+      const wor = key
+      const value = values[key]
+      createUserProgress(wor, value)
+    }
   }
 
   return (
@@ -55,12 +72,14 @@ function WorkoutProgressForm({ setVisible, exercisesPopup }) {
       <h2>Мой прогресс</h2>
       <S.ProgressForm>
         {exercisesPopup.map((item, i) => (
-          <label>
+          <label key={workouts[i].id}>
             {item}
             <S.FormInput
+              key={workouts[i].id}
               type="number"
-              value={value}
-              onChange={(event) => setValue(event.target.value)}
+              name={workouts[i].id}
+              value={i.user}
+              onChange={(event) => handleInputChange(event)}
               placeholder="Введите значение"
             />
           </label>

@@ -6,17 +6,14 @@ import { useParams } from 'react-router-dom'
 import * as S from './styles'
 import Exercises from '../../components/Exercises'
 import WorkoutProgress from '../../components/Workout-progress'
-// import playIconVideo from '../../assests/static/playIconVideo.png'
-
 import WorkoutProgressForm from '../../components/Workout-progress/form/WorkoutProgressForm'
-
 import { useCourses } from '../../hooks/use-courses'
 
 function UserWorkout() {
   const params = useParams()
 
   const [visible, setVisible] = useState(false)
-  const { isCourses, courses } = useCourses()
+  const { courses } = useCourses()
 
   useEffect(() => {
     visible
@@ -24,13 +21,12 @@ function UserWorkout() {
       : (document.body.style.overflow = 'scroll')
   }, [visible])
 
-  const id = 'a01'
-  const exercises = isCourses ? courses[4].workouts.yoga_d1.exercises : ''
-  const exercisesPopup = courses[4].workouts.yoga_d1.exercises_popup
-  const exercisesProgress = courses[4].workouts.yoga_d1.exercises_progress
-  const title = courses[4].workouts.yoga_d1.course
-  const { name } = courses[4].workouts.yoga_d1
-  const { video } = courses[4].workouts.yoga_d1
+  const { id } = params
+  const { workouts, name, video } = courses[4].workouts[id]
+  const exercises = workouts.map((item) => item.exercises)
+  const exercisesPopup = workouts.map((item) => item.exercises_popup)
+  const exercisesProgress = workouts.map((item) => item.exercises_progress)
+  const title = courses[4].workouts[id].course
 
   return (
     <>
@@ -52,7 +48,11 @@ function UserWorkout() {
             setVisible={setVisible}
             exercises={exercises}
           />
-          <WorkoutProgress exercisesProgress={exercisesProgress} id={id} />
+          <WorkoutProgress
+            exercisesProgress={exercisesProgress}
+            id={id}
+            workouts={workouts}
+          />
         </S.ExercisesWrapper>
       </section>
       {visible && (
@@ -60,6 +60,7 @@ function UserWorkout() {
           <WorkoutProgressForm
             exercisesPopup={exercisesPopup}
             setVisible={setVisible}
+            workouts={workouts}
           />
           <S.Overlay />
         </>
