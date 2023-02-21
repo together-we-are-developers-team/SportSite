@@ -23,6 +23,7 @@ function MyProfile() {
   const [modalTrainingActive, setModalTrainingActive] = useState(false)
   const [currentCourseForCard, setCurrentCourseForCard] = useState('yoga')
   /// /////////////////////////////////////////////////////////////////функции для правки логина/пароля//////////////////////////////////
+
   const dispatch = useDispatch()
   const auth = getAuth()
   const { email, password, progress } = useAuth()
@@ -57,12 +58,14 @@ function MyProfile() {
       })
   }
 
+
   return (
     <S.MyprofileBlock>
       <S.MyprofileUserInfo>
         <S.Title>Мой профиль</S.Title>
         <S.Paragraph>Логин: {email}</S.Paragraph>
         <S.Paragraph>Пароль: {password}</S.Paragraph>
+
 
         <S.MyprofileUserChangeButtons>
           <S.Button onClick={() => setModalLoginActive(true)}>

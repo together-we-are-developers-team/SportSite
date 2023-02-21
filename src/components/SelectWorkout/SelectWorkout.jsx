@@ -20,6 +20,7 @@ function SelectWorkout({ active, setActive, course }) {
     courses.filter((item) => item.id === course).pop().workouts
   )
 
+
   const checkFullProgress = (dayProgress) => {
     const day = dayProgress.split('_')[1]
 
@@ -28,6 +29,7 @@ function SelectWorkout({ active, setActive, course }) {
     )
     return fullProgress
   }
+
 
   return (
     <S.PopAreaForTrainings onClick={() => setActive(false)}>
@@ -39,6 +41,7 @@ function SelectWorkout({ active, setActive, course }) {
             <TrainingBtn
               key={training.id}
               title={training.name}
+
               subTitle={training.subTitle}
               dayProgress={() => checkFullProgress(training.id)}
             />

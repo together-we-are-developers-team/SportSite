@@ -1,11 +1,11 @@
 import React from 'react'
-import { StyledNotFound } from './styles'
+import * as S from './styles'
 
 function NotFound() {
   return (
-    <StyledNotFound>
-      <h1>Страница не найдена.</h1>
-    </StyledNotFound>
+    <S.StyledNotFound>
+      <S.StyledText>Страница не найдена</S.StyledText>
+    </S.StyledNotFound>
   )
 }
 export default NotFound

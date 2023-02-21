@@ -15,7 +15,7 @@ export const PopAreaForTrainings = styled.div`
 `
 
 export const PopupAreaMenu = styled.div`
-  height: 626px;
+  height: auto;
   width: 444px;
   background-color: #f5f5f5;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
