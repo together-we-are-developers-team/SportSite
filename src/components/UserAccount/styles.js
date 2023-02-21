@@ -16,9 +16,33 @@ export const SideBarName = styled.h2`
   line-height: 24px;
   color: ${({ location }) => (location === '/' ? 'white' : 'black')};
 `
-export const SideBarAvatar = styled.img`
+export const SideBarAvatar = styled.div`
   width: 43px;
   height: 43px;
-  background-color: #313131;
+  background-color: #d9d9d9;
   border-radius: 50%;
+`
+export const dropdownContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+`
+export const arrowContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: 20px;
+  hight: 20px;
+`
+
+export const dropdownBox = styled.div`
+  top: 30px;
+  position: absolute;
+  border: none;
+  border-radius: 3px;
+  transition: 0.3s;
+  scale: ${({ active }) => (active ? '1' : '0')};
+`
+export const dropdownBoxItem = styled.p`
+  padding: 0 5px;
+  color: ${({ location }) => (location === '/' ? 'white' : 'black')};
 `

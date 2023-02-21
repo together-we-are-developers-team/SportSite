@@ -8,6 +8,7 @@ import Button from '../../Button/Button'
 import { getProgress } from '../../../store/slices/userSlices'
 import { useAuth } from '../../../hooks/use-auth'
 
+
 function WorkoutProgressForm({ setVisible, exercisesPopup, workouts, course }) {
   const formRef = useRef()
   const dispatch = useDispatch()

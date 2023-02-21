@@ -37,6 +37,7 @@ function UserWorkout() {
     : []
   const title = currentCourse.workouts[id].course
 
+
   return (
     <>
       <section>
@@ -66,6 +67,7 @@ function UserWorkout() {
               workouts={workouts}
             />
           )}
+
         </S.ExercisesWrapper>
       </section>
       {visible && (
@@ -75,6 +77,7 @@ function UserWorkout() {
             setVisible={setVisible}
             workouts={workouts}
             course={currentCourseName}
+
           />
           <S.Overlay />
         </>

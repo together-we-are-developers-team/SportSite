@@ -55,6 +55,7 @@ function SelectWorkout({ active, setActive, course }) {
             <TrainingBtn
               key={training.id}
               title={training.name}
+
               subTitle={training.subTitle}
             />
           </Link>
