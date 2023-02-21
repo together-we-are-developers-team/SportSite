@@ -1,5 +1,10 @@
 import styled, { css } from 'styled-components'
 import { greenButton } from '../Button/styles'
+/* import cardYoga from './images/card-yoga.png'
+import cardStrech from './images/'
+import cardStep from './images/card-step.png'
+import cardDance from './images/card-dance.png'
+import cardBody from './images/card-body.png' */
 
 export const Card = styled.div`
   cursor: pointer;

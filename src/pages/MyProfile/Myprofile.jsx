@@ -5,12 +5,12 @@ import * as S from './styles'
 import ModalPassword from '../../components/ModalPassword/ModalPassword'
 import ModalLogin from '../../components/ModalLogin/ModalLogin'
 import Card from '../../components/Card/Card'
-import cardDance from '../../components/Card/images/card-dance.png'
-import cardStretch from '../../components/Card/images/card-strench.png'
-import cardYoga from '../../components/Card/images/card-yoga.png'
+// import cardDance from '../../components/Card/images/card-dance.png'
+// import cardStretch from '../../components/Card/images/card-strech.png'
+// import cardYoga from '../../components/Card/images/card-yoga.png'
 import ModalTraining from '../../components/SelectWorkout/SelectWorkout'
-import cardStep from '../../components/Card/images/card-step.png'
-import cardBody from '../../components/Card/images/card-body.png'
+// import cardStep from '../../components/Card/images/card-step.png'
+// import cardBody from '../../components/Card/images/card-body.png'
 import {
   updateUserEmail,
   updateUserPassword,
@@ -82,7 +82,7 @@ function MyProfile() {
           <Card
             key={element.id}
             titleCard={element.nameRu}
-            cardImage={element.image}
+            cardImage={`card-${element.id}`}
             isForwardBtn
             onClick={() => {
               setCurrentCourseForCard(element.id)

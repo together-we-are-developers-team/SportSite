@@ -46,6 +46,8 @@ function UserWorkout() {
           url={video}
           width="100%"
           height="640px"
+          // eslint-disable-next-line react/jsx-boolean-value
+          muted = {true}
           // light={true}
           controls
           // playIcon={playIconVideo}
