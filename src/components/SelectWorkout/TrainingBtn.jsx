@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import * as S from './styles'
 
-function TrainingBtn({ title, subTitle }) {
-  const [active, setActive] = useState(false)
+function TrainingBtn({ title, subTitle, dayProgress }) {
+  const [active, setActive] = useState(dayProgress)
 
   return (
-    <S.TrainingBtn active={active} onClick={() => setActive(!active)}>
+    <S.TrainingBtn active={active}>
       <S.BtnTitle>{title}</S.BtnTitle>
       {active && (
         <svg

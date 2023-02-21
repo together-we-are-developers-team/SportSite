@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { getDatabase, ref, child, get } from 'firebase/database'
+
 import * as S from './styles'
 import SaleStiker from '../../components/SaleStiker/SaleStiker'
 import Card from '../../components/Card/Card'
@@ -12,7 +13,6 @@ import { useCourses } from '../../hooks/use-courses'
 function Main() {
   const dispatch = useDispatch()
   const { isCourses, courses } = useCourses()
-  /// /////////////////////////////////////////
 
   /* для заполнения карточек можно использовать массив курсов courses,путем его обхода и рендера карточек по данным  */
   // названия курсов можно взять так, пример console.log(courses[0].nameRu)
@@ -62,7 +62,7 @@ function Main() {
                   <Card
                     key={item.id}
                     titleCard={item.nameRu}
-                    back={`card-${item.nameEng}`}
+                    cardImage={`card-${item.id}`}
                   />
                 </Link>
               ))

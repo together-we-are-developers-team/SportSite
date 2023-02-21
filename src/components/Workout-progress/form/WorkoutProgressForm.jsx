@@ -61,6 +61,7 @@ function WorkoutProgressForm({ setVisible, exercisesPopup, workouts, course }) {
 
   const onSubmit = (event) => {
     event.preventDefault()
+    // eslint-disable-next-line no-restricted-syntax, guard-for-in
     for (const key in values) {
       const wor = key
       const value = values[key]
