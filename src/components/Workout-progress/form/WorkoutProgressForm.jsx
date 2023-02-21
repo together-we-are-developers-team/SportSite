@@ -8,7 +8,8 @@ import Button from '../../Button/Button'
 import { getProgress } from '../../../store/slices/userSlices'
 import { useAuth } from '../../../hooks/use-auth'
 
-function WorkoutProgressForm({ setVisible, exercisesPopup, workouts }) {
+
+function WorkoutProgressForm({ setVisible, exercisesPopup, workouts, course }) {
   const formRef = useRef()
   const dispatch = useDispatch()
   const { id } = useAuth()
@@ -32,7 +33,7 @@ function WorkoutProgressForm({ setVisible, exercisesPopup, workouts }) {
     set(
       ref(
         db,
-        `/progress/${id}/workouts/yoga/${dayOfProgress}/${workout}/user/`
+        `/progress/${id}/workouts/${course}/${dayOfProgress}/${workout}/user/`
       ),
 
       Number(value)

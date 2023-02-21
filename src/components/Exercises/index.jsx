@@ -4,6 +4,9 @@ import * as S from './styles'
 import Button from '../Button/Button'
 
 function Exercises({ visible, setVisible, exercises }) {
+  if (exercises.length === 0) {
+    return null
+  }
   return (
     <div>
       <h3>Упражнения</h3>
