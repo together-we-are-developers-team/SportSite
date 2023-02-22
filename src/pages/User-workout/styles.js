@@ -1,5 +1,19 @@
 import styled from 'styled-components'
 
+export const Title = styled.h1`
+  font-size: 48px;
+  margin-bottom: 40px;
+  font-style: normal;
+  font-weight: 400;
+`
+
+export const SubTitle = styled.h2`
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-style: normal;
+  font-weight: 400;
+`
+
 export const ExercisesWrapper = styled.div`
   display: flex;
   justify-content: space-between;

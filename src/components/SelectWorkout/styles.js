@@ -16,30 +16,40 @@ export const PopAreaForTrainings = styled.div`
 
 export const PopupAreaMenu = styled.div`
   height: auto;
-  width: 444px;
+  max-width: 444px;
+  padding: 36px 53px 58px 53px;
   background-color: #f5f5f5;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
 `
 export const Title = styled.h1`
-  height: 40px;
-  left: 53px;
-  top: 36px;
-  display: flex;
-  justify-content: center;
-  margin-top: 36px;
+  font-size: 32px;
   margin-bottom: 40px;
+  text-align: center;
 `
-export const TrainingBtn = styled.button`
+
+export const TraningWrap = styled.div`
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 278px;
-  left: 83px;
-  margin-bottom: 12px;
-  top: 0px;
+  row-gap: 12px;
+  max-height: 450px;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+  }
+`
+
+export const TrainingBtn = styled.div`
+  padding: 12px 27px 17px 27px;
   border: ${(props) =>
     props.active ? '1px solid #06b16e' : '1px solid #000000'};
   border-radius: 26px;
@@ -62,19 +72,12 @@ export const BtnTitle = styled.h3`
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 115%;
-  letter-spacing: -0.5px;
-  font-feature-settings: 'pnum' on, 'lnum' on;
-  margin-top: 11px;
-  margin-bottom: 6px;
+  text-align: center;
 `
 
 export const BtnSubtitle = styled.h2`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 18px;
-  letter-spacing: -0.5px;
-  font-feature-settings: 'pnum' on, 'lnum' on;
   margin-bottom: 17px;
 `

@@ -8,7 +8,6 @@ import Button from '../../Button/Button'
 import { getProgress } from '../../../store/slices/userSlices'
 import { useAuth } from '../../../hooks/use-auth'
 
-
 function WorkoutProgressForm({ setVisible, exercisesPopup, workouts, course }) {
   const formRef = useRef()
   const dispatch = useDispatch()
@@ -61,12 +60,10 @@ function WorkoutProgressForm({ setVisible, exercisesPopup, workouts, course }) {
 
   const onSubmit = (event) => {
     event.preventDefault()
-    // eslint-disable-next-line no-restricted-syntax, guard-for-in
-    for (const key in values) {
-      const wor = key
-      const value = values[key]
-      createUserProgress(wor, value)
-    }
+
+    Object.keys(values).forEach((key) => {
+      createUserProgress(key, values[key])
+    })
   }
 
   return (
