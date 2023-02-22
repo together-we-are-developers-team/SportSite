@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/static/js/main.80d21f0d.js",
+    "static/js/787.981bf8ac.chunk.js": "/static/js/787.981bf8ac.chunk.js",
+    "static/media/back.png": "/static/media/back.81d8acb1284b8d81d32f.png",
+    "static/media/stratosskyengweb-regular.woff2": "/static/media/stratosskyengweb-regular.ce93393e831d32412096.woff2",
+    "static/media/phone.png": "/static/media/phone.1cc5437d864fb47ab87c.png",
+    "static/media/SaleSticker.png": "/static/media/SaleSticker.722852d92acc61e6395d.png",
+    "index.html": "/index.html",
+    "main.80d21f0d.js.map": "/static/js/main.80d21f0d.js.map",
+    "787.981bf8ac.chunk.js.map": "/static/js/787.981bf8ac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.80d21f0d.js"
+  ]
+}
