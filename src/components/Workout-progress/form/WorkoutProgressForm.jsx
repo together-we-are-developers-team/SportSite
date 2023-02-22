@@ -49,12 +49,7 @@ function WorkoutProgressForm({ setVisible, exercisesPopup, workouts, course }) {
               progress: data,
             })
           )
-        } else {
-          console.log('No data available')
         }
-      })
-      .catch((error) => {
-        console.error(error)
       })
   }
 

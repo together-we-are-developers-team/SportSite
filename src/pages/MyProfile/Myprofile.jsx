@@ -38,9 +38,6 @@ function MyProfile() {
           })
         )
       })
-      .catch((error) => {
-        console.error(error)
-      })
   }
   const changePassword = (newPassword) => {
     setModalActive(true)
@@ -53,11 +50,7 @@ function MyProfile() {
           })
         )
       })
-      .catch((error) => {
-        console.error(error)
-      })
   }
-
 
   return (
     <S.MyprofileBlock>
@@ -65,7 +58,6 @@ function MyProfile() {
         <S.Title>Мой профиль</S.Title>
         <S.Paragraph>Логин: {email}</S.Paragraph>
         <S.Paragraph>Пароль: {password}</S.Paragraph>
-
 
         <S.MyprofileUserChangeButtons>
           <S.Button onClick={() => setModalLoginActive(true)}>
