@@ -37,18 +37,16 @@ function UserWorkout() {
     : []
   const title = currentCourse.workouts[id].course
 
-
   return (
     <>
       <section>
-        <h1>{title}</h1>
-        <h2>{name}</h2>
+        <S.Title>{title}</S.Title>
+        <S.SubTitle>{name}</S.SubTitle>
         <ReactPlayer
           url={video}
           width="100%"
           height="640px"
-          // eslint-disable-next-line react/jsx-boolean-value
-          muted = {true}
+          muted
           // light={true}
           controls
           // playIcon={playIconVideo}
@@ -69,7 +67,6 @@ function UserWorkout() {
               workouts={workouts}
             />
           )}
-
         </S.ExercisesWrapper>
       </section>
       {visible && (
@@ -79,7 +76,6 @@ function UserWorkout() {
             setVisible={setVisible}
             workouts={workouts}
             course={currentCourseName}
-
           />
           <S.Overlay />
         </>
