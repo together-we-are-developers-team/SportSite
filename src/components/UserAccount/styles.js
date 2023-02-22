@@ -36,6 +36,7 @@ export const arrowContainer = styled.div`
 
 export const dropdownBox = styled.div`
   top: 30px;
+  right: -2px;
   position: absolute;
   border: none;
   border-radius: 3px;
