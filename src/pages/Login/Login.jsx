@@ -40,12 +40,7 @@ function Login() {
                   progress: data,
                 })
               )
-            } else {
-              console.log('No data available')
             }
-          })
-          .catch((error) => {
-            console.error(error)
           })
         setSubmitSuccessMSG('Вход выполнен успешно.')
         setTimeout(() => navigate('/'), 1000)

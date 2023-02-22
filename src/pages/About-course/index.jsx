@@ -32,12 +32,7 @@ function AboutCourse() {
                 courses: data,
               })
             )
-          } else {
-            console.log('No data available')
           }
-        })
-        .catch((error) => {
-          console.error(error)
         })
     }
 

@@ -22,21 +22,17 @@ function Main() {
   useEffect(() => {
     const dbRef = ref(getDatabase())
 
-    get(child(dbRef, `courses/`))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          const data = snapshot.val()
+    get(child(dbRef, `courses/`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val()
 
-          dispatch(
-            getCourses({
-              courses: data,
-            })
-          )
-        }
-      })
-      .catch((error) => {
-        console.error(error)
-      })
+        dispatch(
+          getCourses({
+            courses: data,
+          })
+        )
+      }
+    })
   }, [])
 
   const UpWindow = () => {
